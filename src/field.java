@@ -1,4 +1,4 @@
-/*import java.util.Scanner;
+import java.util.Scanner;
 public class field {
     public static void main(String[] args)
     {
@@ -7,7 +7,7 @@ public class field {
         System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
         int raz = in.nextInt();
 
-        System.out.println("Выберите количество перпятствий");
+        System.out.println("Выберите количество препятствий");
         System.out.println("1:Нет; 2:Мало; 3:Средне; 4:Много");
         int colich = in.nextInt();
 
@@ -77,4 +77,4 @@ public class field {
            }
        }
     }
-    }*/
+    }
