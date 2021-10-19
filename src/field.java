@@ -1,34 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
+
 public class field extends JPanel {
 
-   /* public class block {
-        public int posy;
-        public int posx;
 
-
-        public block(int x, int y) {
-            posx = x;
-            posy = y;
-        }
-
-        public void SetRandomPosition() {
-            posx = (int) (Math.random() * 20 - 1);
-            posy = (int) (Math.random() * 20 - 1);
-        }
-    }*/
-
-
-
-
-    public static JFrame jFrame;
+    public static JFrame jFrame;            //создание окна вывода
     public static final int scale =32;                 //размер клетки
+    public static int col;
 
     //отрисовка клеток на поле
     public void paint(Graphics g){
-        g.setColor(Color.black);
-        g.fillRect(0,0,1000,1000);
         for (int x= 0; x<1000; x+=scale){
             g.setColor(Color.white);
             g.drawLine(x,0,x,1000);
@@ -37,12 +19,23 @@ public class field extends JPanel {
             g.setColor(Color.white);
             g.drawLine(0,y,1000,y);
         }
-        //for (int i=0; i<20; i++){
-       //     g.setColor(Color.white);
-        //    g.fillRect(block.posx*scale+1, blok.posy*scale+1,scale-1,scale-1);
-        //}
+
+        //отрисовка препятствий на поле
+       for (int c=0; c<col; c++){
+           g.setColor(Color.white);
+           int rx=getRandom()*scale;
+           int ry=getRandom()*scale;
+           g.fillRect(rx,ry, scale, scale);
+       }
+
+
     }
 
+
+    public static int getRandom()
+    {
+        return (int) (Math.random() * scale);
+    }
 
     public static void main(String[] args)
     {
@@ -57,6 +50,8 @@ public class field extends JPanel {
         int colich = in.nextInt();
 
 
+
+        //в соотвестсвии с выбором задается размер и количество препятствий
         if (raz==1)
         {
              raz=scale*20;
@@ -65,18 +60,17 @@ public class field extends JPanel {
                     colich = 0;
                     break;
                 case 2:
-                    colich =50;
+                    colich =20;
                     break;
                 case 3:
-                    colich =100;
+                    colich =25;
                     break;
                 case 4:
-                    colich =250;
+                    colich =50;
                     break;
             }
 
         }
-
         if (raz==2)
         {
              raz=scale*15;
@@ -85,18 +79,17 @@ public class field extends JPanel {
                     colich = 0;
                     break;
                 case 2:
-                    colich =25;
+                    colich =15;
                     break;
                 case 3:
-                    colich =50;
+                    colich =20;
                     break;
                 case 4:
-                    colich =100;
+                    colich =40;
                     break;
             }
 
         }
-
         if (raz==3)
         {
              raz=scale*10;
@@ -105,10 +98,10 @@ public class field extends JPanel {
                     colich = 0;
                     break;
                 case 2:
-                    colich =10;
+                    colich =20;
                     break;
                 case 3:
-                    colich =30;
+                    colich =40;
                     break;
                 case 4:
                     colich =50;
@@ -117,11 +110,11 @@ public class field extends JPanel {
 
         }
 
-        int col=colich;
+        col=colich;
         int razmerx=raz+17;
         int razmery=raz+40;
 
-        //создание окна для змейки
+        //настройка окна вывода
         jFrame = new JFrame("Snake");
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.setLocationRelativeTo(null);
@@ -129,14 +122,7 @@ public class field extends JPanel {
         jFrame.setResizable(false);
         jFrame.add(new field());
         jFrame.setSize(razmerx,razmery);
+        jFrame.setBackground(Color.black);
 
-
-       // block= new block ((int) (Math.random() * 20 - 1),(int) (Math.random() * 20 - 1));
-
-        int x;
-        int y;
-       // for (int i=0; i<colich; i++){
-
-       // }
     }
     }

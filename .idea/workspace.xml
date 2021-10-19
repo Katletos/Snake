@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="Переделал поле">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/field.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
