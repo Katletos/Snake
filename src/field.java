@@ -11,7 +11,7 @@ public class field extends JPanel {
 
     //отрисовка клеток на поле
     public void paint(Graphics g){
-        for (int x= 0; x<1000; x+=scale){
+        for (int x= 1; x<1000; x+=scale){
             g.setColor(Color.white);
             g.drawLine(x,0,x,1000);
         }
@@ -21,12 +21,12 @@ public class field extends JPanel {
         }
 
         //отрисовка препятствий на поле
-       for (int c=0; c<col; c++){
-           g.setColor(Color.white);
-           int rx=getRandom()*scale;
-           int ry=getRandom()*scale;
-           g.fillRect(rx,ry, scale, scale);
-       }
+        for (int c=0; c<col; c++){
+            g.setColor(Color.white);
+            int rx=getRandom()*scale;
+            int ry=getRandom()*scale;
+            g.fillRect(rx+1,ry, scale, scale);
+        }
 
 
     }
@@ -54,7 +54,7 @@ public class field extends JPanel {
         //в соотвестсвии с выбором задается размер и количество препятствий
         if (raz==1)
         {
-             raz=scale*20;
+            raz=scale*20;
             switch (colich) {
                 case 1:
                     colich = 0;
@@ -73,7 +73,7 @@ public class field extends JPanel {
         }
         if (raz==2)
         {
-             raz=scale*15;
+            raz=scale*15;
             switch (colich) {
                 case 1:
                     colich = 0;
@@ -92,7 +92,7 @@ public class field extends JPanel {
         }
         if (raz==3)
         {
-             raz=scale*10;
+            raz=scale*10;
             switch (colich) {
                 case 1:
                     colich = 0;
@@ -112,7 +112,7 @@ public class field extends JPanel {
 
         col=colich;
         int razmerx=raz+17;
-        int razmery=raz+40;
+        int razmery=raz+39;
 
         //настройка окна вывода
         jFrame = new JFrame("Snake");
@@ -125,4 +125,4 @@ public class field extends JPanel {
         jFrame.setBackground(Color.black);
 
     }
-    }
+}
