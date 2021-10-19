@@ -117,7 +117,7 @@ public class field extends JPanel {
         //настройка окна вывода
         jFrame = new JFrame("Snake");
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        jFrame.setLocationRelativeTo(null);
+        jFrame.setLocation(100,100);
         jFrame.setVisible(true);
         jFrame.setResizable(false);
         jFrame.add(new field());
