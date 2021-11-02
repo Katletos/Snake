@@ -1,24 +1,71 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
-public class field extends JPanel {
+public class field extends JPanel implements ActionListener {
 
 
     public static JFrame jFrame;            //создание окна вывода
     public static final int scale =32;                 //размер клетки
     public static int col;
+    public static int speed = 10;
+    public static int f=0;
+    public static int[] coordx;
+    public static int[] coordy;
+    public static int razmerx;
+    public static int razmery;
+
+    Snake sn = new Snake(razmerx/(2*scale),razmery/(2*scale)+1,razmerx/(2*scale),razmery/(2*scale));
+    Timer timer = new Timer(1000/speed,this);
+
+    public  field(){
+        timer.start();
+        addKeyListener(new KeyBoard());
+        setFocusable(true);
+    }
+
+    public void paint(Graphics t) {
+        t.setColor(Color.black);
+        t.fillRect(0,0,640,640);
+        for (int x= 1; x<640; x+=scale){
+            t.setColor(Color.white);
+            t.drawLine(x,0,x,640);
+        }
+        for (int y=0; y<640; y+=scale){
+            t.setColor(Color.white);
+            t.drawLine(0,y,640,y);
+        }
+        for (int l = 0; l < sn.len; l++) {
+            t.setColor(Color.GREEN);
+            t.fillRect(sn.sX[l] * scale, sn.sY[l] * scale, scale, scale);
+        }
+
+        if (f==0){
+            for (int c = 0; c < col; c++) {
+                t.setColor(Color.white);
+                int rx = getRandom() * scale;
+                int ry = getRandom() * scale;
+                coordx[c] = rx;
+                coordy[c] = ry;
+                t.fillRect(rx , ry, scale, scale);
+            }
+            f = 1;
+        }
+        else{
+            for (int c = 0; c< col; c++){
+                t.setColor(Color.white);
+                t.fillRect(coordx[c],coordy[c],scale,scale);
+            }
+        }
+
+    }
 
     //отрисовка клеток на поле
-    public void paint(Graphics g){
-        for (int x= 1; x<1000; x+=scale){
-            g.setColor(Color.white);
-            g.drawLine(x,0,x,1000);
-        }
-        for (int y=0; y<1000; y+=scale){
-            g.setColor(Color.white);
-            g.drawLine(0,y,1000,y);
-        }
+   /*public void ppaint(Graphics g){
 
         //отрисовка препятствий на поле
         for (int c=0; c<col; c++){
@@ -27,9 +74,8 @@ public class field extends JPanel {
             int ry=getRandom()*scale;
             g.fillRect(rx+1,ry, scale, scale);
         }
+    }*/
 
-
-    }
 
 
     public static int getRandom()
@@ -111,8 +157,8 @@ public class field extends JPanel {
         }
 
         col=colich;
-        int razmerx=raz+17;
-        int razmery=raz+39;
+        razmerx=raz+17;
+        razmery=raz+39;
 
         //настройка окна вывода
         jFrame = new JFrame("Snake");
@@ -122,7 +168,24 @@ public class field extends JPanel {
         jFrame.setResizable(false);
         jFrame.add(new field());
         jFrame.setSize(razmerx,razmery);
-        jFrame.setBackground(Color.black);
+        jFrame.setAlwaysOnTop(true);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        sn.move();
+        repaint();
+    }
+
+    public class KeyBoard extends KeyAdapter{
+        public void keyPressed(KeyEvent event){
+            int key = event.getKeyCode();
+
+            if (key == KeyEvent.VK_W) sn.dierection=0;
+            if (key == KeyEvent.VK_S) sn.dierection=2;
+            if (key == KeyEvent.VK_A) sn.dierection=3;
+            if (key == KeyEvent.VK_D) sn.dierection=1;
+        }
     }
 }
