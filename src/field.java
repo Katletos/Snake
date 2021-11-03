@@ -12,14 +12,19 @@ public class field extends JPanel implements ActionListener {
     public static JFrame jFrame;            //создание окна вывода
     public static final int scale =32;                 //размер клетки
     public static int col;
+
     public static int speed = 10;
-    public static int f=0;
-    public static int[] coordx;
-    public static int[] coordy;
+
+    //public static int f=0;
+
+   // public static int[] coordx;
+    //public static int[] coordy;
+
     public static int razmerx;
     public static int razmery;
 
     Snake sn = new Snake(razmerx/(2*scale),razmery/(2*scale)+1,razmerx/(2*scale),razmery/(2*scale));
+    Apple apple = new Apple((int) Math.random()*razmerx,(int) Math.random()*razmery);
     Timer timer = new Timer(1000/speed,this);
 
     public  field(){
@@ -39,12 +44,16 @@ public class field extends JPanel implements ActionListener {
             t.setColor(Color.white);
             t.drawLine(0,y,640,y);
         }
+
+        t.setColor(Color.red);
+        t.fillOval(apple.posX*scale, apple.posY*scale,scale,scale);
+
         for (int l = 0; l < sn.len; l++) {
             t.setColor(Color.GREEN);
             t.fillRect(sn.sX[l] * scale, sn.sY[l] * scale, scale, scale);
         }
 
-        if (f==0){
+        /*if (f==0){
             for (int c = 0; c < col; c++) {
                 t.setColor(Color.white);
                 int rx = getRandom() * scale;
@@ -60,27 +69,8 @@ public class field extends JPanel implements ActionListener {
                 t.setColor(Color.white);
                 t.fillRect(coordx[c],coordy[c],scale,scale);
             }
-        }
+        }*/
 
-    }
-
-    //отрисовка клеток на поле
-   /*public void ppaint(Graphics g){
-
-        //отрисовка препятствий на поле
-        for (int c=0; c<col; c++){
-            g.setColor(Color.white);
-            int rx=getRandom()*scale;
-            int ry=getRandom()*scale;
-            g.fillRect(rx+1,ry, scale, scale);
-        }
-    }*/
-
-
-
-    public static int getRandom()
-    {
-        return (int) (Math.random() * scale);
     }
 
     public static void main(String[] args)
@@ -180,12 +170,12 @@ public class field extends JPanel implements ActionListener {
 
     public class KeyBoard extends KeyAdapter{
         public void keyPressed(KeyEvent event){
-            int key = event.getKeyCode();
 
-            if (key == KeyEvent.VK_W) sn.dierection=0;
-            if (key == KeyEvent.VK_S) sn.dierection=2;
-            if (key == KeyEvent.VK_A) sn.dierection=3;
-            if (key == KeyEvent.VK_D) sn.dierection=1;
+            if ((event.getKeyCode() == KeyEvent.VK_UP) && (sn.dierection != 2)) sn.dierection=0;
+            if (event.getKeyCode() == KeyEvent.VK_DOWN  && (sn.dierection != 0)) sn.dierection=2;
+            if (event.getKeyCode() == KeyEvent.VK_LEFT && (sn.dierection != 1)) sn.dierection=3;
+            if (event.getKeyCode() == KeyEvent.VK_RIGHT && (sn.dierection != 3)) sn.dierection=1;
+
         }
     }
 }

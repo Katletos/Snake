@@ -1,7 +1,7 @@
 public class Snake {
 
     public int len = 2;
-    public int dierection = 3;
+    public int dierection ;
 
     public  int sX[] = new int[300];
     public  int sY[] = new int[300];
