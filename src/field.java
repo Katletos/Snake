@@ -8,7 +8,7 @@ public class field extends JPanel {
     public static JFrame jFrame;            //создание окна вывода
     public static final int scale =32;                 //размер клетки
     public static int col;
-
+    public static int razmer;
     //отрисовка клеток на поле
     public void paint(Graphics g){
         for (int x= 1; x<1000; x+=scale){
@@ -37,21 +37,8 @@ public class field extends JPanel {
         return (int) (Math.random() * scale);
     }
 
-    public static void main(String[] args)
+    public static void Size(int raz, int colich)
     {
-
-        Scanner in = new Scanner(System.in);
-        System.out.println("Выберите размер поля");
-        System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
-        int raz = in.nextInt();
-
-        System.out.println("Выберите количество препятствий");
-        System.out.println("1:Нет; 2:Мало; 3:Средне; 4:Много");
-        int colich = in.nextInt();
-
-
-
-        //в соотвестсвии с выбором задается размер и количество препятствий
         if (raz==1)
         {
             raz=scale*20;
@@ -111,13 +98,32 @@ public class field extends JPanel {
         }
 
         col=colich;
-        int razmerx=raz+17;
-        int razmery=raz+39;
+        razmer=raz;
+    }
+
+    public static void main(String[] args)
+    {
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Выберите размер поля");
+        System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
+        int r = in.nextInt();
+
+        System.out.println("Выберите количество препятствий");
+        System.out.println("1:Нет; 2:Мало; 3:Средне; 4:Много");
+        int k = in.nextInt();
+
+
+
+        //в соотвестсвии с выбором задается размер и количество препятствий
+         Size(r,k);
+        int razmerx=razmer+17;
+        int razmery=razmer+39;
 
         //настройка окна вывода
         jFrame = new JFrame("Snake");
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        jFrame.setLocation(100,100);
+        jFrame.setLocation(0,0);
         jFrame.setVisible(true);
         jFrame.setResizable(false);
         jFrame.add(new field());

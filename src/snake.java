@@ -1,39 +1,32 @@
+public class Snake {
 
+    public int len = 2;
+    public int dierection = 1 ;
 
-public class snake {
+    public  int sX[] = new int[300];
+    public  int sY[] = new int[300];
 
-    public int length = 2;
-    public int direction = 1;
-
-    public int snake_X[] = new int[field.scale*field.razmer];
-    public int snake_Y[] = new int[field.scale*field.razmer];
-
-    public snake(int x1, int y1, int x2, int y2)
-    {
-        snake_X[0]=x1;
-        snake_Y[0]=y1;
-        snake_X[1]=x2;
-        snake_Y[1]=y2;
+    public Snake(int x1, int y1, int x2, int y2){
+        sX[0]=x1;
+        sX[1]=x2;
+        sY[0]=y1;
+        sY[1]=y2;
     }
 
-    public void Move()
-    {
-        for(int i = length; i>0;i--){
-            snake_X[i]=snake_X[i-1];
-            snake_Y[i]=snake_Y[i-1];
+    public void move(){
+        for(int l = len; l > 0; l--){
+            sX[l] = sX[l-1];
+            sY[l] = sY[l-1];
         }
         //up
-        if (direction == 0) snake_Y[0]--;
-        //right
-        if (direction == 1) snake_X[0]++;
-        //left
-        if (direction == 2) snake_X[0]--;
+        if(dierection == 0) sY[0]--;
         //down
-        if (direction == 3) snake_Y[0]++;
+        if(dierection == 2) sY[0]++;
+        //right
+        if(dierection == 1) sX[0]++;
+        //left
+        if(dierection == 3) sX[0]--;
 
 
-
-
-            }
-
+    }
 }
