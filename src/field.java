@@ -16,7 +16,7 @@ public class field extends JPanel implements ActionListener {
     public  int speed=8;
     public boolean T=false;
 
-    Snake s = new Snake (4,4, 5, 4);
+    Snake s = new Snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
     Timer timer = new Timer(1000/speed, this);
 
@@ -33,11 +33,11 @@ public class field extends JPanel implements ActionListener {
         g.fillRect(0,0, razmer, razmer);
 
         for (int x= 1; x<1000; x+=scale){
-            g.setColor(Color.white);
+            g.setColor(Color.black);
             g.drawLine(x,0,x,1000);
         }
         for (int y=0; y<1000; y+=scale){
-            g.setColor(Color.white);
+            g.setColor(Color.black);
             g.drawLine(0,y,1000,y);
         }
 
@@ -51,12 +51,14 @@ public class field extends JPanel implements ActionListener {
 
         //яблоко,конфета...хз как ее там
         g.setColor(Color.red);
-        g.fillOval(a.posX*scale+2,a.posY*scale+1, scale-1, scale-1);
+        g.fillOval(a.posX*scale+5,a.posY*scale+4, scale-8, scale-8);
 
         //змей
-        for (int l=0; l<s.len; l++){
+        for (int l=1; l<s.len; l++){
             g.setColor(Color.green);
-            g.fillRect(s.sX[l]*scale+2, s.sY[l]*scale+1, scale-1, scale-1);
+            g.fillRect(s.sX[l]*scale+4, s.sY[l]*scale+3, scale-6, scale-6);
+            g.setColor(Color.white);
+            g.fillRect(s.sX[0]*scale+4, s.sY[0]*scale+3, scale-6, scale-6);
         }
 
 
@@ -165,6 +167,18 @@ public class field extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if (T) s.move();
+
+        if(s.sX[0]==a.posX && s.sY[0]==a.posY){
+            a.setRandomPosition();
+            s.len++;
+        }
+
+        for (int l=1; l<s.len; l++){
+            if(s.sX[l]==a.posX && s.sY[l]==a.posY){
+                a.setRandomPosition();
+            }
+        }
+
         repaint();
     }
 
