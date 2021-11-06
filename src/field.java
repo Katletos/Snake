@@ -15,11 +15,13 @@ public class field extends JPanel implements ActionListener {
     public static int razmer;
     public  int speed=8;
     public boolean T=false;
-
+    public int score=0;
+//задаем Змея и яблоко
     Snake s = new Snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
+    //Ввод таймера для движ змеи
     Timer timer = new Timer(1000/speed, this);
-
+//подрубаем клаву и таймер
     public field(){
     timer.start();
     addKeyListener(new KeyBoard());
@@ -29,9 +31,10 @@ public class field extends JPanel implements ActionListener {
 
     //отрисовка клеток на поле
     public void paint(Graphics g){
+        //черный экран
         g.setColor(Color.black);
         g.fillRect(0,0, razmer, razmer);
-
+         //клетки
         for (int x= 1; x<1000; x+=scale){
             g.setColor(Color.black);
             g.drawLine(x,0,x,1000);
@@ -42,12 +45,8 @@ public class field extends JPanel implements ActionListener {
         }
 
         //отрисовка препятствий на поле
-        for (int c=0; c<col; c++){
-            g.setColor(Color.white);
-            int rx=getRandom()*scale;
-            int ry=getRandom()*scale;
-            g.fillRect(rx+1,ry, scale, scale);
-        }
+         g.setColor(Color.gray);
+        //СКОРО
 
         //яблоко,конфета...хз как ее там
         g.setColor(Color.red);
@@ -65,11 +64,7 @@ public class field extends JPanel implements ActionListener {
     }
 
 
-    public static int getRandom()
-    {
-        return (int) (Math.random() * scale);
-    }
-
+   //выбираем размер поля и кол-во препятствий(доработать)
     public static void Size(int raz, int colich)
     {
         if (raz==1)
@@ -129,7 +124,7 @@ public class field extends JPanel implements ActionListener {
             }
 
         }
-
+// закидываю их в общую массу
         col=colich;
         razmer=raz;
     }
@@ -166,28 +161,32 @@ public class field extends JPanel implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e){
+        // если нажат enter начинаем движ змейки
         if (T) s.move();
-
+//едим яблоко
         if(s.sX[0]==a.posX && s.sY[0]==a.posY){
             a.setRandomPosition();
             s.len++;
+            score += 5;
         }
-
+//проверка на проигрыш
         for (int l=1; l<s.len; l++){
+            // если яблоко в змейке перерисуем
             if(s.sX[l]==a.posX && s.sY[l]==a.posY){
                 a.setRandomPosition();
             }
+            // если змея в змее или стене
             if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) || s.wall)
             {
-               // timer.stop();
-                T = false;
-                JOptionPane.showMessageDialog(null,"GAME OVER");
-                jFrame.setVisible(false);
-                s.len=2;
-                a.setRandomPosition();
-                s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;
-                s.wall=false;
-                jFrame.setVisible(true);
+                T = false; //стопим змею
+                JOptionPane.showMessageDialog(null,"GAME OVER");//you lose
+                jFrame.setVisible(false);// turn off the field
+                s.len=2;// start length
+                a.setRandomPosition();//new candy
+                s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
+                s.wall=false;//start walls
+                score=0;//start score
+                jFrame.setVisible(true);// turn on the field
 
             }
         }
@@ -199,12 +198,12 @@ public class field extends JPanel implements ActionListener {
         public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
 
-            if (key == KeyEvent.VK_ENTER ) T=true;
-            if (key == KeyEvent.VK_ESCAPE) T=false;
-            if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_W) && s.direction != 2) s.direction = 0;
-            if ((key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) && s.direction != 3) s.direction = 1;
-            if ((key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) && s.direction != 0) s.direction = 2;
-            if ((key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) && s.direction != 1) s.direction = 3;
+            if (key == KeyEvent.VK_ENTER ) T=true;//начало игры
+            if (key == KeyEvent.VK_ESCAPE) T=false;//пауза
+            if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_W) && s.direction != 2) s.direction = 0;//UP
+            if ((key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) && s.direction != 3) s.direction = 1;//RIGHT
+            if ((key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) && s.direction != 0) s.direction = 2;//DOWN
+            if ((key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) && s.direction != 1) s.direction = 3;//LEFT
 
 
         }
