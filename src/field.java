@@ -13,9 +13,11 @@ public class field extends JPanel implements ActionListener {
     public static final int scale =32;                 //размер клетки
     public static int col;
     public static int razmer;
-    public  int speed=10;
+    public  int speed=8;
     public boolean T=false;
-    Snake s = new Snake (1,1, 2, 1);
+
+    Snake s = new Snake (4,4, 5, 4);
+    Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
     Timer timer = new Timer(1000/speed, this);
 
     public field(){
@@ -47,11 +49,16 @@ public class field extends JPanel implements ActionListener {
             g.fillRect(rx+1,ry, scale, scale);
         }
 
+        //яблоко,конфета...хз как ее там
+        g.setColor(Color.red);
+        g.fillOval(a.posX*scale+2,a.posY*scale+1, scale-1, scale-1);
+
         //змей
         for (int l=0; l<s.len; l++){
             g.setColor(Color.green);
             g.fillRect(s.sX[l]*scale+2, s.sY[l]*scale+1, scale-1, scale-1);
         }
+
 
     }
 
@@ -166,6 +173,7 @@ public class field extends JPanel implements ActionListener {
             int key = event.getKeyCode();
 
             if (key == KeyEvent.VK_ENTER ) T=true;
+            if (key == KeyEvent.VK_ESCAPE) T=false;
             if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_W) && s.direction != 2) s.direction = 0;
             if ((key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) && s.direction != 3) s.direction = 1;
             if ((key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) && s.direction != 0) s.direction = 2;

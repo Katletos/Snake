@@ -7,4 +7,10 @@ public class Apple {
         posX = x;
         posY = y;
     }
+
+    public void setRandomPosition(){
+        posX = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+        posY = Math.abs((int) (Math.random()*(field.razmer/field.scale)-1));
+    }
+
 }
