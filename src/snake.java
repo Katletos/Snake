@@ -2,6 +2,7 @@ public class Snake {
 
     public int len = 2;
     public int direction = 1 ;
+    public boolean wall = false;
 
     public  int[] sX= new int[field.razmer];
     public  int[] sY = new int[field.razmer];
@@ -27,9 +28,9 @@ public class Snake {
         //left
         if(direction == 3) sX[0]--;
 
-        if(sY[0]>field.razmer/field.scale) sY[0]=0;
-        if(sY[0]<0) sY[0]=field.razmer/field.scale;
-        if(sX[0]>field.razmer/field.scale) sX[0]=0;
-        if(sX[0]<0) sX[0]=field.razmer/field.scale;
+        if(sY[0]>field.razmer/field.scale) wall = true;
+        if(sY[0]<0) wall = true;
+        if(sX[0]>field.razmer/field.scale-1) wall = true;
+        if(sX[0]<0) wall = true;
     }
 }

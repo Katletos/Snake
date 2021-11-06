@@ -177,7 +177,7 @@ public class field extends JPanel implements ActionListener {
             if(s.sX[l]==a.posX && s.sY[l]==a.posY){
                 a.setRandomPosition();
             }
-            if(s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l])
+            if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) || s.wall)
             {
                // timer.stop();
                 T = false;
@@ -185,6 +185,8 @@ public class field extends JPanel implements ActionListener {
                 jFrame.setVisible(false);
                 s.len=2;
                 a.setRandomPosition();
+                s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;
+                s.wall=false;
                 jFrame.setVisible(true);
 
             }
