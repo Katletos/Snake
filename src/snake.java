@@ -3,8 +3,8 @@ public class Snake {
     public int len = 2;
     public int dierection = 1 ;
 
-    public  int sX[] = new int[300];
-    public  int sY[] = new int[300];
+    public  int sX[] = new int[field.razmer*field.scale];
+    public  int sY[] = new int[field.razmer*field.scale];
 
     public Snake(int x1, int y1, int x2, int y2){
         sX[0]=x1;

@@ -9,8 +9,16 @@ public class field extends JPanel {
     public static final int scale =32;                 //размер клетки
     public static int col;
     public static int razmer;
+    public static int speed=100;
+    Snake s = new Snake (1,1, 2, 1);
+
+    public field(){
+
+    }
     //отрисовка клеток на поле
     public void paint(Graphics g){
+        g.setColor(Color.black);
+        g.fillRect(0,0, razmer*scale, razmer*scale);
         for (int x= 1; x<1000; x+=scale){
             g.setColor(Color.white);
             g.drawLine(x,0,x,1000);
@@ -28,6 +36,11 @@ public class field extends JPanel {
             g.fillRect(rx+1,ry, scale, scale);
         }
 
+        //змей
+        for (int l=0; l<s.len; l++){
+            g.setColor(Color.green);
+            g.fillRect(s.sX[l]*scale+2, s.sY[l]*scale+1, scale-1, scale-1);
+        }
 
     }
 
@@ -117,8 +130,8 @@ public class field extends JPanel {
 
         //в соотвестсвии с выбором задается размер и количество препятствий
          Size(r,k);
-        int razmerx=razmer+17;
-        int razmery=razmer+39;
+        int razmerx=razmer+16;
+        int razmery=razmer+38;
 
         //настройка окна вывода
         jFrame = new JFrame("Snake");
