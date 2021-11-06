@@ -1,7 +1,7 @@
 public class Snake {
 
     public int len = 2;
-    public int direction = 2 ;
+    public int direction = 1 ;
 
     public  int[] sX= new int[field.razmer];
     public  int[] sY = new int[field.razmer];

@@ -14,7 +14,7 @@ public class field extends JPanel implements ActionListener {
     public static int col;
     public static int razmer;
     public  int speed=10;
-
+    public boolean T=false;
     Snake s = new Snake (1,1, 2, 1);
     Timer timer = new Timer(1000/speed, this);
 
@@ -157,19 +157,21 @@ public class field extends JPanel implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e){
-        s.move();
+        if (T) s.move();
         repaint();
     }
 
-    public class KeyBoard extends KeyAdapter{
-        public void keyPressed (KeyEvent event){
+    public class KeyBoard extends KeyAdapter {
+        public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
 
-            if(key == KeyEvent.VK_UP) s.direction = 0;
-            if(key == KeyEvent.VK_RIGHT) s.direction = 1;
-            if(key == KeyEvent.VK_DOWN) s.direction = 2;
-            if(key == KeyEvent.VK_LEFT) s.direction = 3;
-        }
+            if (key == KeyEvent.VK_ENTER ) T=true;
+            if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_W) && s.direction != 2) s.direction = 0;
+            if ((key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) && s.direction != 3) s.direction = 1;
+            if ((key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) && s.direction != 0) s.direction = 2;
+            if ((key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) && s.direction != 1) s.direction = 3;
 
+
+        }
     }
 }
