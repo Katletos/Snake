@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="сделал читабельнее">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="головастик шевелится">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
@@ -128,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636189546704</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="родил головастика">
+      <created>1636190243169</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636190243169</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +169,9 @@
     <MESSAGE value="correct the text" />
     <MESSAGE value="Переделал поле" />
     <MESSAGE value="сделал читабельнее" />
-    <option name="LAST_COMMIT_MESSAGE" value="сделал читабельнее" />
+    <MESSAGE value="родил головастика" />
+    <MESSAGE value="головастик шевелится" />
+    <option name="LAST_COMMIT_MESSAGE" value="головастик шевелится" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

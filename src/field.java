@@ -1,19 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
-public class field extends JPanel {
+public class field extends JPanel implements ActionListener {
 
 
     public static JFrame jFrame;            //создание окна вывода
     public static final int scale =32;                 //размер клетки
     public static int col;
     public static int razmer;
-    public static int speed=100;
+    public  int speed=10;
     Snake s = new Snake (1,1, 2, 1);
-
+    Timer timer = new Timer(1000/speed, this);
     public field(){
-
+    timer.start();
     }
     //отрисовка клеток на поле
     public void paint(Graphics g){
@@ -143,5 +145,10 @@ public class field extends JPanel {
         jFrame.setSize(razmerx,razmery);
         jFrame.setBackground(Color.black);
 
+    }
+    @Override
+    public void actionPerformed(ActionEvent e){
+        s.move();
+        repaint();
     }
 }
