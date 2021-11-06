@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
 public class field extends JPanel implements ActionListener {
@@ -12,15 +14,22 @@ public class field extends JPanel implements ActionListener {
     public static int col;
     public static int razmer;
     public  int speed=10;
+
     Snake s = new Snake (1,1, 2, 1);
     Timer timer = new Timer(1000/speed, this);
+
     public field(){
     timer.start();
+    addKeyListener(new KeyBoard());
+    setFocusable(true);
+
     }
+
     //отрисовка клеток на поле
     public void paint(Graphics g){
         g.setColor(Color.black);
-        g.fillRect(0,0, razmer*scale, razmer*scale);
+        g.fillRect(0,0, razmer, razmer);
+
         for (int x= 1; x<1000; x+=scale){
             g.setColor(Color.white);
             g.drawLine(x,0,x,1000);
@@ -120,18 +129,19 @@ public class field extends JPanel implements ActionListener {
     {
 
         Scanner in = new Scanner(System.in);
-        System.out.println("Выберите размер поля");
-        System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
-        int r = in.nextInt();
+          System.out.println("Выберите размер поля");
+          System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
+        int r =  in.nextInt();
 
-        System.out.println("Выберите количество препятствий");
-        System.out.println("1:Нет; 2:Мало; 3:Средне; 4:Много");
+          System.out.println("Выберите количество препятствий");
+          System.out.println("1:Нет; 2:Мало; 3:Средне; 4:Много");
         int k = in.nextInt();
 
 
 
         //в соотвестсвии с выбором задается размер и количество препятствий
          Size(r,k);
+        //System.out.println(field.razmer);
         int razmerx=razmer+16;
         int razmery=razmer+38;
 
@@ -139,16 +149,27 @@ public class field extends JPanel implements ActionListener {
         jFrame = new JFrame("Snake");
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.setLocation(0,0);
-        jFrame.setVisible(true);
         jFrame.setResizable(false);
-        jFrame.add(new field());
         jFrame.setSize(razmerx,razmery);
-        jFrame.setBackground(Color.black);
+        jFrame.add(new field());
+        jFrame.setVisible(true);
 
     }
     @Override
     public void actionPerformed(ActionEvent e){
         s.move();
         repaint();
+    }
+
+    public class KeyBoard extends KeyAdapter{
+        public void keyPressed (KeyEvent event){
+            int key = event.getKeyCode();
+
+            if(key == KeyEvent.VK_UP) s.direction = 0;
+            if(key == KeyEvent.VK_RIGHT) s.direction = 1;
+            if(key == KeyEvent.VK_DOWN) s.direction = 2;
+            if(key == KeyEvent.VK_LEFT) s.direction = 3;
+        }
+
     }
 }
