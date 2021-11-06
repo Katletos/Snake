@@ -177,6 +177,17 @@ public class field extends JPanel implements ActionListener {
             if(s.sX[l]==a.posX && s.sY[l]==a.posY){
                 a.setRandomPosition();
             }
+            if(s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l])
+            {
+               // timer.stop();
+                T = false;
+                JOptionPane.showMessageDialog(null,"GAME OVER");
+                jFrame.setVisible(false);
+                s.len=2;
+                a.setRandomPosition();
+                jFrame.setVisible(true);
+
+            }
         }
 
         repaint();
