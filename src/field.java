@@ -16,6 +16,8 @@ public class field extends JPanel implements ActionListener {
     public  int speed=8;
     public boolean T=false;
     public int score=0;
+    public static int[] objx;
+    public static int[] objy;
 //задаем Змея и яблоко
     Snake s = new Snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
@@ -44,13 +46,16 @@ public class field extends JPanel implements ActionListener {
             g.drawLine(0,y,1000,y);
         }
 
-        //отрисовка препятствий на поле
-         g.setColor(Color.gray);
-        //СКОРО
-
         //яблоко,конфета...хз как ее там
         g.setColor(Color.red);
         g.fillOval(a.posX*scale+5,a.posY*scale+4, scale-8, scale-8);
+
+        //отрисовка препятствий на поле
+        g.setColor(Color.gray);
+        for (int i=0; i< col;i++) {
+            g.fillRect(objx[i]*scale+4,objy[i]*scale+3,scale-6,scale-6);
+        }
+
 
         //змей
         for (int l=1; l<s.len; l++){
@@ -149,6 +154,14 @@ public class field extends JPanel implements ActionListener {
         int razmerx=razmer+16;
         int razmery=razmer+38;
 
+        //создание координат препятствий
+        objx= new int[col];
+        objy= new int[col];
+        for (int i=0; i< field.col;i++) {
+            objx[i] = Math.abs((int) (Math.random() * scale));
+            objy[i] = Math.abs((int) (Math.random() *  scale));
+        }
+
         //настройка окна вывода
         jFrame = new JFrame("Snake");
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -157,6 +170,7 @@ public class field extends JPanel implements ActionListener {
         jFrame.setSize(razmerx,razmery);
         jFrame.add(new field());
         jFrame.setVisible(true);
+
 
     }
     @Override
@@ -175,6 +189,25 @@ public class field extends JPanel implements ActionListener {
             if(s.sX[l]==a.posX && s.sY[l]==a.posY){
                 a.setRandomPosition();
             }
+            if(objx[l]==a.posX && objy[l]==a.posY){
+                a.setRandomPosition();
+            }
+
+            for (int i=0; i< field.col;i++) {
+                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) || s.wall){
+                    T = false; //стопим змею
+                    JOptionPane.showMessageDialog(null,"GAME OVER");//you lose
+                    jFrame.setVisible(false);// turn off the field
+                    s.len=2;// start length
+                    a.setRandomPosition();//new candy
+                    s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
+                    s.wall=false;//start walls
+                    score=0;//start score
+                    jFrame.setVisible(true);// turn on the field
+                    s.direction=1;
+                }
+
+            }
             // если змея в змее или стене
             if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) || s.wall)
             {
@@ -187,7 +220,7 @@ public class field extends JPanel implements ActionListener {
                 s.wall=false;//start walls
                 score=0;//start score
                 jFrame.setVisible(true);// turn on the field
-
+                s.direction=1;
             }
         }
 
