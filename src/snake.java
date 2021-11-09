@@ -28,7 +28,7 @@ public class Snake {
         //left
         if(direction == 3) sX[0]--;
 
-        if(sY[0]>field.razmer/field.scale) wall = true;
+        if(sY[0]>field.razmer/field.scale-1) wall = true;
         if(sY[0]<0) wall = true;
         if(sX[0]>field.razmer/field.scale-1) wall = true;
         if(sX[0]<0) wall = true;

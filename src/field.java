@@ -64,8 +64,6 @@ public class field extends JPanel implements ActionListener {
             g.setColor(Color.white);
             g.fillRect(s.sX[0]*scale+4, s.sY[0]*scale+3, scale-6, scale-6);
         }
-
-
     }
 
 
@@ -189,8 +187,11 @@ public class field extends JPanel implements ActionListener {
             if(s.sX[l]==a.posX && s.sY[l]==a.posY){
                 a.setRandomPosition();
             }
-            if(objx[l]==a.posX && objy[l]==a.posY){
-                a.setRandomPosition();
+            //если яблоко в препятствии
+            for (int i = 0; i< col;i++){
+                if(objx[i]==a.posX && objy[i]==a.posY){
+                    a.setRandomPosition();
+                }
             }
 
             for (int i=0; i< field.col;i++) {
