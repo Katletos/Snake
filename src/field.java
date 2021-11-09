@@ -158,16 +158,21 @@ public class field extends JPanel implements ActionListener {
         for (int i=0; i< field.col;i++) {
             objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
             objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+
+
         }
 
-        //настройка окна вывода
+        //настройка окна вывод
         jFrame = new JFrame("Snake");
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jFrame.setLocation(0,0);
         jFrame.setResizable(false);
         jFrame.setSize(razmerx,razmery);
         jFrame.add(new field());
+        jFrame.setAlwaysOnTop(true);
+
         jFrame.setVisible(true);
+        jFrame.setAlwaysOnTop(false);
 
 
     }
@@ -193,12 +198,14 @@ public class field extends JPanel implements ActionListener {
                     a.setRandomPosition();
                 }
             }
-
+            //змей и препятствия
             for (int i=0; i< field.col;i++) {
                 if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
                     T = false; //стопим змею
-                    JOptionPane.showMessageDialog(null,"GAME OVER");//you lose
-                    jFrame.setVisible(false);// turn off the field
+                    JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, score);
+                   jFrame.setVisible(false);
+                    // turn off the field
                     s.len=2;// start length
                     a.setRandomPosition();//new candy
                     s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
@@ -217,7 +224,8 @@ public class field extends JPanel implements ActionListener {
             if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) || s.wall)
             {
                 T = false; //стопим змею
-                JOptionPane.showMessageDialog(null,"GAME OVER");//you lose
+                JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, score);
                 jFrame.setVisible(false);// turn off the field
                 s.len=2;// start length
                 a.setRandomPosition();//new candy

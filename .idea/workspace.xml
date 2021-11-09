@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="стены сделаны">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="уменьшил скорость и кол-во препятствий">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
@@ -36,7 +36,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/out/production/Snake/field.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/field.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yMyGgJaFql0BwAN8el0k58JLD9" />
@@ -199,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636403741587</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="уменьшил скорость и кол-во препятствий">
+      <created>1636472968258</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636472968258</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +248,8 @@
     <MESSAGE value="запрет на съедение себя" />
     <MESSAGE value="нельзя врезаться в стены" />
     <MESSAGE value="стены сделаны" />
-    <option name="LAST_COMMIT_MESSAGE" value="стены сделаны" />
+    <MESSAGE value="уменьшил скорость и кол-во препятствий" />
+    <option name="LAST_COMMIT_MESSAGE" value="уменьшил скорость и кол-во препятствий" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
