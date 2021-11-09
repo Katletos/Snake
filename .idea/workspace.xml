@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="стены сделаны">
-      <change afterPath="$PROJECT_DIR$/src/Apple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Snake.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/field$KeyBoard.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/field.java" afterDir="false" />
@@ -39,6 +36,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/out/production/Snake/field.class" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/field.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1yMyGgJaFql0BwAN8el0k58JLD9" />

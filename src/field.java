@@ -13,13 +13,13 @@ public class field extends JPanel implements ActionListener {
     public static final int scale =32;                 //размер клетки
     public static int col;
     public static int razmer;
-    public  int speed=8;
+    public  int speed=6;
     public boolean T=false;
     public int score=0;
     public static int[] objx;
     public static int[] objy;
 //задаем Змея и яблоко
-    Snake s = new Snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
+    snake s = new snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
     //Ввод таймера для движ змеи
     Timer timer = new Timer(1000/speed, this);
@@ -75,16 +75,16 @@ public class field extends JPanel implements ActionListener {
             raz=scale*20;
             switch (colich) {
                 case 1:
-                    colich = 0;
+                    colich = 0;//0%
                     break;
                 case 2:
-                    colich =20;
+                    colich =12;//3%
                     break;
                 case 3:
-                    colich =25;
+                    colich =28;//7%
                     break;
                 case 4:
-                    colich =50;
+                    colich =40;//10%
                     break;
             }
 
@@ -97,13 +97,13 @@ public class field extends JPanel implements ActionListener {
                     colich = 0;
                     break;
                 case 2:
-                    colich =15;
+                    colich =7;
                     break;
                 case 3:
-                    colich =20;
+                    colich =16;
                     break;
                 case 4:
-                    colich =40;
+                    colich =23;
                     break;
             }
 
@@ -116,13 +116,13 @@ public class field extends JPanel implements ActionListener {
                     colich = 0;
                     break;
                 case 2:
-                    colich =20;
+                    colich =3;
                     break;
                 case 3:
-                    colich =40;
+                    colich =7;
                     break;
                 case 4:
-                    colich =50;
+                    colich =10;
                     break;
             }
 
@@ -156,8 +156,8 @@ public class field extends JPanel implements ActionListener {
         objx= new int[col];
         objy= new int[col];
         for (int i=0; i< field.col;i++) {
-            objx[i] = Math.abs((int) (Math.random() * scale));
-            objy[i] = Math.abs((int) (Math.random() *  scale));
+            objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+            objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
         }
 
         //настройка окна вывода
@@ -195,7 +195,7 @@ public class field extends JPanel implements ActionListener {
             }
 
             for (int i=0; i< field.col;i++) {
-                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) || s.wall){
+                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
                     T = false; //стопим змею
                     JOptionPane.showMessageDialog(null,"GAME OVER");//you lose
                     jFrame.setVisible(false);// turn off the field
@@ -204,8 +204,12 @@ public class field extends JPanel implements ActionListener {
                     s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
                     s.wall=false;//start walls
                     score=0;//start score
-                    jFrame.setVisible(true);// turn on the field
                     s.direction=1;
+                    objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                    objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+
+
+                    jFrame.setVisible(true);// turn on the field
                 }
 
             }
@@ -220,8 +224,14 @@ public class field extends JPanel implements ActionListener {
                 s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
                 s.wall=false;//start walls
                 score=0;//start score
-                jFrame.setVisible(true);// turn on the field
+
                 s.direction=1;
+                for (int i=0; i< field.col;i++) {
+                    objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                    objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+
+                }
+                jFrame.setVisible(true);// turn on the field
             }
         }
 
