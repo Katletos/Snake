@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="стены сделаны">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Dockerfile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2021_17_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2021_17_47__Changes_.xml" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="убрали блок перед змеей">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Snake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/field.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636472968258</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="убрали блок перед змеей">
+      <created>1636540993779</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1636540993780</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,7 +275,8 @@
     <MESSAGE value="нельзя врезаться в стены" />
     <MESSAGE value="стены сделаны" />
     <MESSAGE value="уменьшил скорость и кол-во препятствий" />
-    <option name="LAST_COMMIT_MESSAGE" value="уменьшил скорость и кол-во препятствий" />
+    <MESSAGE value="убрали блок перед змеей" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрали блок перед змеей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
