@@ -158,12 +158,9 @@ public class field extends JPanel implements ActionListener {
         for (int i=0; i< field.col;i++) {
             objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
             objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-            if((objx[i]== (razmer/scale)/2 + 1 ) && (objy[i]== (razmer/scale)/2 - 1)) {
-                objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-                objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-            }
-        }
 
+
+        }
 
         //настройка окна вывод
         jFrame = new JFrame("Snake");

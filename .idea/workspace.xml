@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="теперь окно выводится сразу">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="уменьшил скорость и кол-во препятствий">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
