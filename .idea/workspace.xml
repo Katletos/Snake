@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="вывожу score сразу на экране игры" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="так-с" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,8 +219,26 @@
       <option name="project" value="LOCAL" />
       <updated>1636562120327</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="так-с">
+      <created>1636640491382</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1636640491383</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -265,7 +283,8 @@
     <MESSAGE value="уменьшил скорость и кол-во препятствий" />
     <MESSAGE value="." />
     <MESSAGE value="вывожу score сразу на экране игры" />
-    <option name="LAST_COMMIT_MESSAGE" value="вывожу score сразу на экране игры" />
+    <MESSAGE value="так-с" />
+    <option name="LAST_COMMIT_MESSAGE" value="так-с" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

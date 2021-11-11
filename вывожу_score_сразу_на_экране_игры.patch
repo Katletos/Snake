@@ -1,0 +1,189 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6491698903d36a7bfd59a5e1f8a1bac8e88b3655)
++++ b/.idea/workspace.xml	(revision 894f5b78e4ee08a4536e07c3143f657c2559db13)
+@@ -4,12 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="уменьшил скорость и кол-во препятствий">
++    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment=".">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Snake.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/field.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -205,7 +203,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1636472968258</updated>
+     </task>
+-    <option name="localTasksCounter" value="16" />
++    <task id="LOCAL-00016" summary=".">
++      <created>1636550293638</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1636550293638</updated>
++    </task>
++    <option name="localTasksCounter" value="17" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -249,7 +254,8 @@
+     <MESSAGE value="нельзя врезаться в стены" />
+     <MESSAGE value="стены сделаны" />
+     <MESSAGE value="уменьшил скорость и кол-во препятствий" />
+-    <option name="LAST_COMMIT_MESSAGE" value="уменьшил скорость и кол-во препятствий" />
++    <MESSAGE value="." />
++    <option name="LAST_COMMIT_MESSAGE" value="." />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/field.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/field.java b/src/field.java
+--- a/src/field.java	(revision 6491698903d36a7bfd59a5e1f8a1bac8e88b3655)
++++ b/src/field.java	(revision 894f5b78e4ee08a4536e07c3143f657c2559db13)
+@@ -18,6 +18,7 @@
+     public int score=0;
+     public static int[] objx;
+     public static int[] objy;
++
+ //задаем Змея и яблоко
+     snake s = new snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
+     Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
+@@ -64,6 +65,10 @@
+             g.setColor(Color.white);
+             g.fillRect(s.sX[0]*scale+4, s.sY[0]*scale+3, scale-6, scale-6);
+         }
++        g.setColor(Color.white);
++       // g.setFont(new Font("TimesRoman", Font.PLAIN, 25)); ТУТ САМИ ПОИГРАЙТЕСЬ ПОКА ЧТО
++        g.drawString("SCORE:",0,razmer);
++        g.drawString(Integer.toString(score),50,razmer);
+     }
+ 
+ 
+@@ -135,6 +140,7 @@
+     public static void main(String[] args)
+     {
+ 
++
+         Scanner in = new Scanner(System.in);
+           System.out.println("Выберите размер поля");
+           System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
+@@ -168,9 +174,14 @@
+         jFrame.setLocation(0,0);
+         jFrame.setResizable(false);
+         jFrame.setSize(razmerx,razmery);
++
+         jFrame.add(new field());
++
++
++
+         jFrame.setAlwaysOnTop(true);
+ 
++
+         jFrame.setVisible(true);
+         jFrame.setAlwaysOnTop(false);
+ 
+@@ -204,6 +215,7 @@
+                     T = false; //стопим змею
+                     JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, score);
++
+                    jFrame.setVisible(false);
+                     // turn off the field
+                     s.len=2;// start length
+diff --git a/out/production/Snake/field$KeyBoard.class b/out/production/Snake/field$KeyBoard.class
+index fb91da58c60abb6ab58040d98de4da45cdb20fd4..557c1ecb26facf1d9f5f5b536910de680d0b81bd
+GIT binary patch
+literal 949
+zc${^TZBNrs6vzK(YggKJTLE>0Rbe<_Y|8K<@r6o)D1kVM$p|LCE8A7;W=q<F;Zyk9
+zSL`EbvT5QAKY*Xf7*Fpe%VJ1#Z_mT8r|10d{q^U^PXG^aU&j;{4d^HtP_U%orj7-a
+z<84{T3RX2#G^`O)(K|ORZxFP`8&`DO4>|P6_1tKaU{pr2wL^lk?Y9LX*Kj?tfAZl-
+z1P9Jhmm@O`zvXlfoxqL#QBaA?5~iMuvnRe2v<c>(=ZRpu>x7};j5RD>{s-`XjgB~b
+z83@iZZdV%bol~doe2nViRCrOH$!D=4yHRC~Fn1|MNOC;_?GZA~$Z2(6ILD*zjHZ7Q
+zw8V}p9ofiwT!$Op7h$yPhmnS=2?J>pCTb>b;Wi<E$-hjjqi$jYcQo8JaS!u^?Bsad
+z>Hi;ZwVmTg1U!v|x#LPaoAFjeoE_@TAs&DZc)jKo#s?L8PDk*7sx%0C+YLl3a(xda
+zK6jn309jVtJzEK|_Q>#_Wp9)H1iy`HZ2+o%N8+nwa=fRQ0jaRqzBZ&VjVpk(;%eLg
+zu5wP+qB1i{&JAkckbG=gMi1#~AEXSR+E#JoC8f7=4&An1^<c-bK2m*X>N&C_k0H&r
+zRweXw0!ob`MM4z`HG3$Iq0bkLDw$=;Y)uqW#)VQ0#bYPs*h?%KNP|i`X30Q_(%2yr
+z9m?PnWznZ;Daqn+*b7Mp$fLkgsQ7|8%(ECpj^<$e<}#UdfuDT3z#rLC;p?~|-wT+P
+Ldh%Ukdj|9u4H35b
+
+diff --git a/out/production/Snake/field.class b/out/production/Snake/field.class
+index 69422eb4d4be341315d03e1d70626670ea6417dc..40a5c8c6c30d84fc0b102dc36eba6492d18ca598
+GIT binary patch
+literal 5716
+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
+
