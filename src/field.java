@@ -33,6 +33,7 @@ public class field extends JPanel implements ActionListener {
 
     //отрисовка клеток на поле
     public void paint(Graphics g){
+
         //черный экран
         g.setColor(Color.black);
         g.fillRect(0,0, razmer, razmer);
@@ -66,9 +67,9 @@ public class field extends JPanel implements ActionListener {
         }
 
         g.setColor(Color.white);
-     //   g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+        g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/scale+5));
         g.drawString("SCORE:",0,razmer);
-        g.drawString(Integer.toString(score),100,razmer);
+        g.drawString(Integer.toString(score), razmer/scale * 5 + 10, razmer);
     }
 
 
@@ -163,7 +164,11 @@ public class field extends JPanel implements ActionListener {
         for (int i=0; i< field.col;i++) {
             objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
             objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-            if((objx[i]== (razmer/scale)/2 + 1 ) && (objy[i]== (razmer/scale)/2 - 1)) {
+
+            if(((objx[i]== (razmer/scale)/2 + 1 ) && (objy[i]== (razmer/scale)/2 - 1)) ||
+            ((objx[i]== (razmer/scale)/2  ) && (objy[i]== (razmer/scale)/2 - 1)) ||
+            ((objx[i]== (razmer/scale)/2 - 1 ) && (objy[i]== (razmer/scale)/2 - 1)))
+            {
                 objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
                 objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
             }
