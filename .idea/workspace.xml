@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="вернул змея домой">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="глянем-ка">
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Snake.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636641011490</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="глянем-ка">
+      <created>1636642286292</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1636642286292</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -299,7 +302,8 @@
     <MESSAGE value="вывожу score сразу на экране игры" />
     <MESSAGE value="так-с" />
     <MESSAGE value="вернул змея домой" />
-    <option name="LAST_COMMIT_MESSAGE" value="вернул змея домой" />
+    <MESSAGE value="глянем-ка" />
+    <option name="LAST_COMMIT_MESSAGE" value="глянем-ка" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
