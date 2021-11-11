@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/field.java" afterDir="false" />
-    </list>
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="вывожу score сразу на экране игры" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -210,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636550293638</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="вывожу score сразу на экране игры">
+      <created>1636562062691</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1636562062692</updated>
+    </task>
+    <task id="LOCAL-00018" summary="вывожу score сразу на экране игры">
+      <created>1636562120327</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1636562120327</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,7 +264,8 @@
     <MESSAGE value="стены сделаны" />
     <MESSAGE value="уменьшил скорость и кол-во препятствий" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="вывожу score сразу на экране игры" />
+    <option name="LAST_COMMIT_MESSAGE" value="вывожу score сразу на экране игры" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
