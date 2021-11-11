@@ -70,6 +70,7 @@ public class field extends JPanel implements ActionListener {
         g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/scale+5));
         g.drawString("SCORE:",0,razmer);
         g.drawString(Integer.toString(score), razmer/scale * 5 + 10, razmer);
+
     }
 
 
@@ -225,9 +226,11 @@ public class field extends JPanel implements ActionListener {
                     s.wall=false;//start walls
                     score=0;//start score
                     s.direction=1;
-                    objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-                    objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                    for (int j=0; i< field.col;i++) {
+                        objx[j] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                        objy[j] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
 
+                    }
 
                     jFrame.setVisible(true);// turn on the field
                 }
