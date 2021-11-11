@@ -26,13 +26,9 @@ public class snake {
         //left
         if(direction == 3) sX[0]--;
 
-        if(sY[0]>field.razmer/field.scale) sY[0]=0;
-        if(sY[0]<0) sY[0]=field.razmer/field.scale;
-        if(sX[0]>field.razmer/field.scale) sX[0]=0;
-        if(sX[0]<0) sX[0]=field.razmer/field.scale;
-        if(sY[0]>field.razmer/field.scale) wall = true;
-        if(sY[0]<0) wall = true;
-        if(sX[0]>field.razmer/field.scale-1) wall = true;
-        if(sX[0]<0) wall = true;
+        if(sY[0]>field.razmer/field.scale-1) sY[0]=0;//wall = true;
+        if(sY[0]<0) sY[0]=field.razmer/field.scale-1;//wall = true;
+        if(sX[0]>field.razmer/field.scale-1)  sX[0]=0;//wall = true;
+        if(sX[0]<0) sX[0]=field.razmer/field.scale-1; //wall = true;
     }
 }

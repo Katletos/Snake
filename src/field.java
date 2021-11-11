@@ -64,6 +64,11 @@ public class field extends JPanel implements ActionListener {
             g.setColor(Color.white);
             g.fillRect(s.sX[0]*scale+4, s.sY[0]*scale+3, scale-6, scale-6);
         }
+
+        g.setColor(Color.white);
+     //   g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+        g.drawString("SCORE:",0,razmer);
+        g.drawString(Integer.toString(score),100,razmer);
     }
 
 
@@ -158,7 +163,10 @@ public class field extends JPanel implements ActionListener {
         for (int i=0; i< field.col;i++) {
             objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
             objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-
+            if((objx[i]== (razmer/scale)/2 + 1 ) && (objy[i]== (razmer/scale)/2 - 1)) {
+                objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+            }
 
         }
 
