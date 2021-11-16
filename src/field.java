@@ -18,7 +18,6 @@ public class field extends JPanel implements ActionListener {
     public int score=0;
     public static int[] objx;
     public static int[] objy;
-
 //задаем Змея и яблоко
     snake s = new snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
@@ -34,6 +33,7 @@ public class field extends JPanel implements ActionListener {
 
     //отрисовка клеток на поле
     public void paint(Graphics g){
+
         //черный экран
         g.setColor(Color.black);
         g.fillRect(0,0, razmer, razmer);
@@ -65,10 +65,12 @@ public class field extends JPanel implements ActionListener {
             g.setColor(Color.white);
             g.fillRect(s.sX[0]*scale+4, s.sY[0]*scale+3, scale-6, scale-6);
         }
+
         g.setColor(Color.white);
-       // g.setFont(new Font("TimesRoman", Font.PLAIN, 25)); ТУТ САМИ ПОИГРАЙТЕСЬ ПОКА ЧТО
+        g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/scale+5));
         g.drawString("SCORE:",0,razmer);
-        g.drawString(Integer.toString(score),50,razmer);
+        g.drawString(Integer.toString(score), razmer/scale * 5 + 10, razmer);
+
     }
 
 
@@ -140,7 +142,6 @@ public class field extends JPanel implements ActionListener {
     public static void main(String[] args)
     {
 
-
         Scanner in = new Scanner(System.in);
           System.out.println("Выберите размер поля");
           System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
@@ -165,6 +166,13 @@ public class field extends JPanel implements ActionListener {
             objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
             objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
 
+            if(((objx[i]== (razmer/scale)/2 + 1 ) && (objy[i]== (razmer/scale)/2 - 1)) ||
+            ((objx[i]== (razmer/scale)/2  ) && (objy[i]== (razmer/scale)/2 - 1)) ||
+            ((objx[i]== (razmer/scale)/2 - 1 ) && (objy[i]== (razmer/scale)/2 - 1)))
+            {
+                objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+            }
 
         }
 
@@ -174,13 +182,8 @@ public class field extends JPanel implements ActionListener {
         jFrame.setLocation(0,0);
         jFrame.setResizable(false);
         jFrame.setSize(razmerx,razmery);
-
         jFrame.add(new field());
-
-
-
         jFrame.setAlwaysOnTop(true);
-
 
         jFrame.setVisible(true);
         jFrame.setAlwaysOnTop(false);
@@ -215,7 +218,6 @@ public class field extends JPanel implements ActionListener {
                     T = false; //стопим змею
                     JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
                     JOptionPane.showMessageDialog(null, score);
-
                    jFrame.setVisible(false);
                     // turn off the field
                     s.len=2;// start length
@@ -224,9 +226,11 @@ public class field extends JPanel implements ActionListener {
                     s.wall=false;//start walls
                     score=0;//start score
                     s.direction=1;
-                    objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-                    objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                    for (int j=0; i< field.col;i++) {
+                        objx[j] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                        objy[j] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
 
+                    }
 
                     jFrame.setVisible(true);// turn on the field
                 }
