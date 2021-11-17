@@ -1,12 +1,12 @@
-public class snake {
+public class Snake {
 
     public int len = 2;
     public int direction = 1 ;
     public boolean wall = false;
 
-    public  int[] sX= new int[field.razmer];
-    public  int[] sY = new int[field.razmer];
-    public snake(int x1, int y1, int x2, int y2){
+    public  int[] sX= new int[Field.razmer];
+    public  int[] sY = new int[Field.razmer];
+    public Snake(int x1, int y1, int x2, int y2){
         sX[0]=x1;
         sX[1]=x2;
         sY[0]=y1;
@@ -26,9 +26,9 @@ public class snake {
         //left
         if(direction == 3) sX[0]--;
 
-        if(sY[0]>field.razmer/field.scale-1) sY[0]=0;//wall = true;
-        if(sY[0]<0) sY[0]=field.razmer/field.scale-1;//wall = true;
-        if(sX[0]>field.razmer/field.scale-1)  sX[0]=0;//wall = true;
-        if(sX[0]<0) sX[0]=field.razmer/field.scale-1; //wall = true;
+        if(sY[0]>Field.razmer/Field.SCALE-1) sY[0]=0;//wall = true;
+        if(sY[0]<0) sY[0]=Field.razmer/Field.SCALE-1;//wall = true;
+        if(sX[0]>Field.razmer/Field.SCALE-1)  sX[0]=0;//wall = true;
+        if(sX[0]<0) sX[0]=Field.razmer/Field.SCALE-1; //wall = true;
     }
 }

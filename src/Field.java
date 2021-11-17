@@ -6,25 +6,25 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
-public class field extends JPanel implements ActionListener {
+public class Field extends JPanel implements ActionListener {
 
 
     public static JFrame jFrame;            //создание окна вывода
-    public static final int scale =32;                 //размер клетки
+    public static final int SCALE =32;                 //размер клетки
     public static int col;
     public static int razmer;
-    public  int speed=6;
+    public int speed=6;
     public boolean T=false;
     public int score=0;
     public static int[] objx;
     public static int[] objy;
 //задаем Змея и яблоко
-    snake s = new snake ((razmer/scale)/2,(razmer/scale)/2-1, (razmer/scale)/2-1, (razmer/scale)/2-1);
-    Apple a = new Apple  (Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)),Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1)));
+    Snake s = new Snake ((razmer/SCALE)/2,(razmer/SCALE)/2-1, (razmer/SCALE)/2-1, (razmer/SCALE)/2-1);
+    Apple a = new Apple  (Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)),Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)));
     //Ввод таймера для движ змеи
     Timer timer = new Timer(1000/speed, this);
 //подрубаем клаву и таймер
-    public field(){
+    public Field(){
     timer.start();
     addKeyListener(new KeyBoard());
     setFocusable(true);
@@ -32,44 +32,45 @@ public class field extends JPanel implements ActionListener {
     }
 
     //отрисовка клеток на поле
+    @Override
     public void paint(Graphics g){
 
         //черный экран
         g.setColor(Color.black);
         g.fillRect(0,0, razmer, razmer);
          //клетки
-        for (int x= 1; x<1000; x+=scale){
+        for (int x= 1; x<1000; x+=SCALE){
             g.setColor(Color.black);
             g.drawLine(x,0,x,1000);
         }
-        for (int y=0; y<1000; y+=scale){
+        for (int y=0; y<1000; y+=SCALE){
             g.setColor(Color.black);
             g.drawLine(0,y,1000,y);
         }
 
         //яблоко,конфета...хз как ее там
         g.setColor(Color.red);
-        g.fillOval(a.posX*scale+5,a.posY*scale+4, scale-8, scale-8);
+        g.fillOval(a.posX*SCALE+5,a.posY*SCALE+4, SCALE-8, SCALE-8);
 
         //отрисовка препятствий на поле
         g.setColor(Color.gray);
         for (int i=0; i< col;i++) {
-            g.fillRect(objx[i]*scale+4,objy[i]*scale+3,scale-6,scale-6);
+            g.fillRect(objx[i]*SCALE+4,objy[i]*SCALE+3,SCALE-6,SCALE-6);
         }
 
 
         //змей
         for (int l=1; l<s.len; l++){
             g.setColor(Color.green);
-            g.fillRect(s.sX[l]*scale+4, s.sY[l]*scale+3, scale-6, scale-6);
+            g.fillRect(s.sX[l]*SCALE+4, s.sY[l]*SCALE+3, SCALE-6, SCALE-6);
             g.setColor(Color.white);
-            g.fillRect(s.sX[0]*scale+4, s.sY[0]*scale+3, scale-6, scale-6);
+            g.fillRect(s.sX[0]*SCALE+4, s.sY[0]*SCALE+3, SCALE-6, SCALE-6);
         }
 
         g.setColor(Color.white);
-        g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/scale+5));
+        g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
         g.drawString("SCORE:",0,razmer);
-        g.drawString(Integer.toString(score), razmer/scale * 5 + 10, razmer);
+        g.drawString(Integer.toString(score), razmer/SCALE * 5 + 10, razmer);
 
     }
 
@@ -79,7 +80,7 @@ public class field extends JPanel implements ActionListener {
     {
         if (raz==1)
         {
-            raz=scale*20;
+            raz=SCALE*20;
             switch (colich) {
                 case 1:
                     colich = 0;//0%
@@ -93,12 +94,15 @@ public class field extends JPanel implements ActionListener {
                 case 4:
                     colich =40;//10%
                     break;
+                default:
+                    error();
+                    break;
             }
 
         }
         if (raz==2)
         {
-            raz=scale*15;
+            raz=SCALE*15;
             switch (colich) {
                 case 1:
                     colich = 0;
@@ -112,12 +116,15 @@ public class field extends JPanel implements ActionListener {
                 case 4:
                     colich =23;
                     break;
+                default:
+                    error();
+                    break;
             }
 
         }
         if (raz==3)
         {
-            raz=scale*10;
+            raz=SCALE*10;
             switch (colich) {
                 case 1:
                     colich = 0;
@@ -131,6 +138,9 @@ public class field extends JPanel implements ActionListener {
                 case 4:
                     colich =10;
                     break;
+                default:
+                    error();
+                    break;
             }
 
         }
@@ -138,6 +148,10 @@ public class field extends JPanel implements ActionListener {
         col=colich;
         razmer=raz;
     }
+
+    private static void error() {
+    }
+
 
     public static void main(String[] args)
     {
@@ -162,16 +176,16 @@ public class field extends JPanel implements ActionListener {
         //создание координат препятствий
         objx= new int[col];
         objy= new int[col];
-        for (int i=0; i< field.col;i++) {
-            objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-            objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+        for (int i=0; i< Field.col;i++) {
+            objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+            objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
-            if(((objx[i]== (razmer/scale)/2 + 1 ) && (objy[i]== (razmer/scale)/2 - 1)) ||
-            ((objx[i]== (razmer/scale)/2  ) && (objy[i]== (razmer/scale)/2 - 1)) ||
-            ((objx[i]== (razmer/scale)/2 - 1 ) && (objy[i]== (razmer/scale)/2 - 1)))
+            if(((objx[i]== (razmer/SCALE)/2 + 1 ) && (objy[i]== (razmer/SCALE)/2 - 1)) ||
+            ((objx[i]== (razmer/SCALE)/2  ) && (objy[i]== (razmer/SCALE)/2 - 1)) ||
+            ((objx[i]== (razmer/SCALE)/2 - 1 ) && (objy[i]== (razmer/SCALE)/2 - 1)))
             {
-                objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-                objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
             }
 
         }
@@ -182,7 +196,7 @@ public class field extends JPanel implements ActionListener {
         jFrame.setLocation(0,0);
         jFrame.setResizable(false);
         jFrame.setSize(razmerx,razmery);
-        jFrame.add(new field());
+        jFrame.add(new Field());
         jFrame.setAlwaysOnTop(true);
 
         jFrame.setVisible(true);
@@ -213,7 +227,7 @@ public class field extends JPanel implements ActionListener {
                 }
             }
             //змей и препятствия
-            for (int i=0; i< field.col;i++) {
+            for (int i=0; i< Field.col;i++) {
                 if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
                     T = false; //стопим змею
                     JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
@@ -222,13 +236,13 @@ public class field extends JPanel implements ActionListener {
                     // turn off the field
                     s.len=2;// start length
                     a.setRandomPosition();//new candy
-                    s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
+                    s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
                     s.wall=false;//start walls
                     score=0;//start score
                     s.direction=1;
-                    for (int j=0; i< field.col;i++) {
-                        objx[j] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-                        objy[j] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                    for (int j=0; i< Field.col;i++) {
+                        objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                        objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
                     }
 
@@ -245,14 +259,14 @@ public class field extends JPanel implements ActionListener {
                 jFrame.setVisible(false);// turn off the field
                 s.len=2;// start length
                 a.setRandomPosition();//new candy
-                s.sX[0] = (razmer/scale)/2; s.sY[0]=(razmer/scale)/2-1; s.sY[1]=(razmer/scale)/2-1; s.sX[1]=(razmer/scale)/2-1;//start position
+                s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
                 s.wall=false;//start walls
                 score=0;//start score
 
                 s.direction=1;
-                for (int i=0; i< field.col;i++) {
-                    objx[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-                    objy[i] = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
+                for (int i=0; i< Field.col;i++) {
+                    objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                    objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
                 }
                 jFrame.setVisible(true);// turn on the field

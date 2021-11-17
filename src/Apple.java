@@ -9,8 +9,8 @@ public class Apple {
     }
 
     public void setRandomPosition(){
-        posX = Math.abs( (int) (Math.random()*(field.razmer/field.scale)-1));
-        posY = Math.abs((int) (Math.random()*(field.razmer/field.scale)-1));
+        posX = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+        posY = Math.abs((int) (Math.random()*(Field.razmer/Field.SCALE)-1));
     }
 
 }
