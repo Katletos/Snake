@@ -169,7 +169,6 @@ public class Field extends JPanel implements ActionListener {
 
         //в соотвестсвии с выбором задается размер и количество препятствий
          Size(r,k);
-        //System.out.println(field.razmer);
         int razmerx=razmer+16;
         int razmery=razmer+38;
 
@@ -240,7 +239,7 @@ public class Field extends JPanel implements ActionListener {
                     s.wall=false;//start walls
                     score=0;//start score
                     s.direction=1;
-                    for (int j=0; i< Field.col;i++) {
+                    for (int j=0; j< Field.col;j++) {
                         objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
                         objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
