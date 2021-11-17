@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.Scanner;
 
 public class Field extends JPanel implements ActionListener {
 
@@ -156,50 +155,11 @@ public class Field extends JPanel implements ActionListener {
     public static void main(String[] args)
     {
 
-        Scanner in = new Scanner(System.in);
-          System.out.println("Выберите размер поля");
-          System.out.println("1:Большое; 2:Среднее; 3:Маленькое");
-        int r =  in.nextInt();
-
-          System.out.println("Выберите количество препятствий");
-          System.out.println("1:Нет; 2:Мало; 3:Средне; 4:Много");
-        int k = in.nextInt();
+        Menu app = new Menu();
+        app.setVisible(true);
 
 
 
-        //в соотвестсвии с выбором задается размер и количество препятствий
-         Size(r,k);
-        int razmerx=razmer+16;
-        int razmery=razmer+38;
-
-        //создание координат препятствий
-        objx= new int[col];
-        objy= new int[col];
-        for (int i=0; i< Field.col;i++) {
-            objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-            objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-
-            if(((objx[i]== (razmer/SCALE)/2 + 1 ) && (objy[i]== (razmer/SCALE)/2 - 1)) ||
-            ((objx[i]== (razmer/SCALE)/2  ) && (objy[i]== (razmer/SCALE)/2 - 1)) ||
-            ((objx[i]== (razmer/SCALE)/2 - 1 ) && (objy[i]== (razmer/SCALE)/2 - 1)))
-            {
-                objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-            }
-
-        }
-
-        //настройка окна вывод
-        jFrame = new JFrame("Snake");
-        jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        jFrame.setLocation(0,0);
-        jFrame.setResizable(false);
-        jFrame.setSize(razmerx,razmery);
-        jFrame.add(new Field());
-        jFrame.setAlwaysOnTop(true);
-
-        jFrame.setVisible(true);
-        jFrame.setAlwaysOnTop(false);
 
 
     }
@@ -255,7 +215,7 @@ public class Field extends JPanel implements ActionListener {
                 T = false; //стопим змею
                 JOptionPane.showMessageDialog(null, "GAME OVER!!!","THE END", JOptionPane.INFORMATION_MESSAGE);
                 JOptionPane.showMessageDialog(null, score);
-                jFrame.setVisible(false);// turn off the field
+                jFrame.setVisible(false); // turn off the field
                 s.len=2;// start length
                 a.setRandomPosition();//new candy
                 s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
