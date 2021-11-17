@@ -229,7 +229,7 @@ public class Field extends JPanel implements ActionListener {
             for (int i=0; i< Field.col;i++) {
                 if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
                     T = false; //стопим змею
-                    JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "GAME OVER!!!","THE END", JOptionPane.INFORMATION_MESSAGE);
                     JOptionPane.showMessageDialog(null, score);
                    jFrame.setVisible(false);
                     // turn off the field
@@ -253,7 +253,7 @@ public class Field extends JPanel implements ActionListener {
             if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) || s.wall)
             {
                 T = false; //стопим змею
-                JOptionPane.showMessageDialog(null, "GAME OVER!!! \nYour score:","THE END", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "GAME OVER!!!","THE END", JOptionPane.INFORMATION_MESSAGE);
                 JOptionPane.showMessageDialog(null, score);
                 jFrame.setVisible(false);// turn off the field
                 s.len=2;// start length
