@@ -12,12 +12,13 @@ public class Menu extends JFrame{
 
 
     public Menu(){
-        super("Snake");
-        this.setBounds(100,100, Field.SCALE*20, Field.SCALE*20);
+        super("Options");
+        this.setSize(Field.SCALE*20, Field.SCALE*20);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = this.getContentPane();
         container.setLayout(new GridLayout(11,1,2,3));
+
         JLabel label = new JLabel("Выберите размер поля");
         container.add(label);
 
@@ -53,6 +54,7 @@ public class Menu extends JFrame{
 
     class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
+            dispose();
             if(radio1.isSelected()) {
                 Field.razmer = Field.SCALE*20;
                 if(radio1_obj.isSelected()) Field.col=0;
