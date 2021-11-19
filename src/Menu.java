@@ -57,10 +57,10 @@ public class Menu extends JFrame{
             dispose();
             if(radio1.isSelected()) {
                 Field.razmer = Field.SCALE*20;
-                if(radio1_obj.isSelected()) Field.col=0;
-                if(radio2_obj.isSelected()) Field.col=12;
-                if(radio3_obj.isSelected()) Field.col=28;
-                if(radio4_obj.isSelected()) Field.col=40;
+                if(radio1_obj.isSelected()) Field.col=0;//0%
+                if(radio2_obj.isSelected()) Field.col=12;//3%
+                if(radio3_obj.isSelected()) Field.col=28;//7%
+                if(radio4_obj.isSelected()) Field.col=40;//10%
             }
             if(radio2.isSelected()) {
                 Field.razmer = Field.SCALE*15;
@@ -96,7 +96,7 @@ public class Menu extends JFrame{
             //настройка окна вывод
             Field.jFrame = new JFrame("Snake");
             Field.jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            Field.jFrame.setLocation(Field.SCALE*20+100,100);
+            Field.jFrame.setLocation(0,0);
             Field.jFrame.setResizable(false);
             Field.jFrame.setSize(Field.razmer+16,Field.razmer+38);
             Field.jFrame.add(new Field());

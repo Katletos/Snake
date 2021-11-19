@@ -38,7 +38,7 @@ public class Field extends JPanel implements ActionListener {
 
         //черный экран
         g.setColor(Color.black);
-        g.fillRect(0,0, razmer, razmer);
+        g.fillRect(0,0, razmer+16, razmer+38);
          //клетки
         for (int x= 1; x<1000; x+=SCALE){
             g.setColor(Color.black);
