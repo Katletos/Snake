@@ -17,12 +17,14 @@ public class Field extends JPanel implements ActionListener {
     public int score=0;
     public static int[] objx;
     public static int[] objy;
-//задаем Змея и яблоко
+
+    //задаем Змея и яблоко
     Snake s = new Snake ((razmer/SCALE)/2,(razmer/SCALE)/2-1, (razmer/SCALE)/2-1, (razmer/SCALE)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)),Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)));
     //Ввод таймера для движ змеи
     Timer timer = new Timer(1000/speed, this);
-//подрубаем клаву и таймер
+
+    //подрубаем клаву и таймер
     public Field(){
     timer.start();
     addKeyListener(new KeyBoard());
@@ -73,109 +75,27 @@ public class Field extends JPanel implements ActionListener {
 
     }
 
-
-   //выбираем размер поля и кол-во препятствий(доработать)
-    public static void Size(int raz, int colich)
-    {
-        if (raz==1)
-        {
-            raz=SCALE*20;
-            switch (colich) {
-                case 1:
-                    colich = 0;//0%
-                    break;
-                case 2:
-                    colich =12;//3%
-                    break;
-                case 3:
-                    colich =28;//7%
-                    break;
-                case 4:
-                    colich =40;//10%
-                    break;
-                default:
-                    error();
-                    break;
-            }
-
-        }
-        if (raz==2)
-        {
-            raz=SCALE*15;
-            switch (colich) {
-                case 1:
-                    colich = 0;
-                    break;
-                case 2:
-                    colich =7;
-                    break;
-                case 3:
-                    colich =16;
-                    break;
-                case 4:
-                    colich =23;
-                    break;
-                default:
-                    error();
-                    break;
-            }
-
-        }
-        if (raz==3)
-        {
-            raz=SCALE*10;
-            switch (colich) {
-                case 1:
-                    colich = 0;
-                    break;
-                case 2:
-                    colich =3;
-                    break;
-                case 3:
-                    colich =7;
-                    break;
-                case 4:
-                    colich =10;
-                    break;
-                default:
-                    error();
-                    break;
-            }
-
-        }
-// закидываю их в общую массу
-        col=colich;
-        razmer=raz;
-    }
-
-    private static void error() {
-    }
-
-
     public static void main(String[] args)
     {
-
         Menu app = new Menu();
         app.setVisible(true);
-
-
-
-
-
     }
+
     @Override
     public void actionPerformed(ActionEvent e){
+
         // если нажат enter начинаем движ змейки
         if (T) s.move();
-//едим яблоко
+        //едим яблоко
         if(s.sX[0]==a.posX && s.sY[0]==a.posY){
             a.setRandomPosition();
             s.len++;
             score += 5;
         }
-//проверка на проигрыш
+
+        //проверка спауна яблока
         for (int l=1; l<s.len; l++){
-            // если яблоко в змейке перерисуем
+            // если яблоко в змейке
             if(s.sX[l]==a.posX && s.sY[l]==a.posY){
                 a.setRandomPosition();
             }
@@ -185,18 +105,15 @@ public class Field extends JPanel implements ActionListener {
                     a.setRandomPosition();
                 }
             }
+
             //змей и препятствия
             for (int i=0; i< Field.col;i++) {
                 if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
                     T = false; //стопим змею
-                    JOptionPane.showMessageDialog(null, "GAME OVER!!!","THE END", JOptionPane.INFORMATION_MESSAGE);
-                    JOptionPane.showMessageDialog(null, score);
-                   jFrame.setVisible(false);
-                    // turn off the field
+                    JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
                     s.len=2;// start length
                     a.setRandomPosition();//new candy
                     s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
-                    s.wall=false;//start walls
                     score=0;//start score
                     s.direction=1;
                     for (int j=0; j< Field.col;j++) {
@@ -204,31 +121,24 @@ public class Field extends JPanel implements ActionListener {
                         objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
                     }
-
-                    jFrame.setVisible(true);// turn on the field
                 }
 
             }
-            // если змея в змее или стене
-            if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) || s.wall)
+            // если змея в змее
+            if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]))
             {
                 T = false; //стопим змею
-                JOptionPane.showMessageDialog(null, "GAME OVER!!!","THE END", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, score);
-                jFrame.setVisible(false); // turn off the field
+                JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
                 s.len=2;// start length
                 a.setRandomPosition();//new candy
                 s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
-                s.wall=false;//start walls
                 score=0;//start score
-
                 s.direction=1;
                 for (int i=0; i< Field.col;i++) {
                     objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
                     objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
                 }
-                jFrame.setVisible(true);// turn on the field
             }
         }
 
