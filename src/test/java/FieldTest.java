@@ -1,15 +1,12 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+
 
 //import static org.junit.jupiter.api.Assertions.*;
 
 class FieldTest {
-
-    @Test
-    void paint() {
-
-    }
 
     @Test
     void main() {
@@ -59,7 +56,32 @@ class FieldTest {
         for(int i=1; i< s.len; i++) {
             Assertions.assertFalse(s.sX[0] == s.sX[i] && s.sY[0] == s.sY[i]);
         }
+   }
 
 
-    }
+    @RepeatedTest(value=10)
+   @DisplayName("objects_generation")
+    public void objects_generation(){
+        Field.col = 40;
+       Field.objx= new int[Field.col];
+       Field.objy= new int[Field.col];
+       for (int i=0; i< Field.col;i++) {
+           Field.objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+           Field.objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+
+           if(((Field.objx[i]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)) ||
+                   ((Field.objx[i]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)) ||
+                   ((Field.objx[i]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)))
+           {
+               Field.objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+               Field.objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+           }
+
+       }
+       for (int i=0; i< Field.col;i++){
+           Assertions.assertFalse(((Field.objx[i]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)));
+           Assertions.assertFalse(((Field.objx[i]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)));
+           Assertions.assertFalse(((Field.objx[i]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)));
+       }
+   }
 }

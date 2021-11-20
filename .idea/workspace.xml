@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="начал тесты, кидаю что есть">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="исправил косяк с поеданием себя + добавка по тестам">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/snake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +48,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -58,7 +55,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -71,7 +68,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FieldTest.snake_eat_snake">
+  <component name="RunManager" selected="JUnit.FieldTest">
     <configuration name="Field" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Field" />
       <module name="Snake" />
@@ -88,11 +85,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.score_up" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldTest.objects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FieldTest" />
-      <option name="METHOD_NAME" value="score_up" />
+      <option name="METHOD_NAME" value="objects" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldTest.objects_generation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="METHOD_NAME" value="objects_generation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,30 +115,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.speed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Snake" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FieldTest" />
-      <option name="METHOD_NAME" value="speed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.FieldTest" />
       <item itemvalue="Application.Field" />
-      <item itemvalue="JUnit.FieldTest.score_up" />
-      <item itemvalue="JUnit.FieldTest.speed" />
       <item itemvalue="JUnit.FieldTest.snake_eat_snake" />
+      <item itemvalue="JUnit.FieldTest.objects" />
+      <item itemvalue="JUnit.FieldTest.objects_generation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FieldTest" />
+        <item itemvalue="JUnit.FieldTest.objects_generation" />
+        <item itemvalue="JUnit.FieldTest.objects" />
         <item itemvalue="JUnit.FieldTest.snake_eat_snake" />
         <item itemvalue="Application.Field" />
-        <item itemvalue="JUnit.FieldTest" />
-        <item itemvalue="JUnit.FieldTest.speed" />
-        <item itemvalue="JUnit.FieldTest.score_up" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637421977613</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="исправил косяк с поеданием себя + добавка по тестам">
+      <created>1637423786716</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1637423786716</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,7 +344,8 @@
     <MESSAGE value="убрал белую полоску справа на полеи пусть начало будет в 0,0: у меня тупо поле не влезает)" />
     <MESSAGE value="респ препятсвий фиксанул" />
     <MESSAGE value="начал тесты, кидаю что есть" />
-    <option name="LAST_COMMIT_MESSAGE" value="начал тесты, кидаю что есть" />
+    <MESSAGE value="исправил косяк с поеданием себя + добавка по тестам" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправил косяк с поеданием себя + добавка по тестам" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
