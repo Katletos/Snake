@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="допилил фикс">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="убрал белую полоску справа на полеи пусть начало будет в 0,0: у меня тупо поле не влезает)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field$KeyBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637170433822</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="убрал белую полоску справа на полеи пусть начало будет в 0,0: у меня тупо поле не влезает)">
+      <created>1637345720830</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1637345720830</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +302,8 @@
     <MESSAGE value="уменьшил скорость и кол-во препятствий" />
     <MESSAGE value="убрали блок перед змеей" />
     <MESSAGE value="допилил фикс" />
-    <option name="LAST_COMMIT_MESSAGE" value="допилил фикс" />
+    <MESSAGE value="убрал белую полоску справа на полеи пусть начало будет в 0,0: у меня тупо поле не влезает)" />
+    <option name="LAST_COMMIT_MESSAGE" value="убрал белую полоску справа на полеи пусть начало будет в 0,0: у меня тупо поле не влезает)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -17,7 +17,6 @@ public class Field extends JPanel implements ActionListener {
     public int score=0;
     public static int[] objx;
     public static int[] objy;
-
     //задаем Змея и яблоко
     Snake s = new Snake ((razmer/SCALE)/2,(razmer/SCALE)/2-1, (razmer/SCALE)/2-1, (razmer/SCALE)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)),Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)));
@@ -108,7 +107,7 @@ public class Field extends JPanel implements ActionListener {
 
             //змей и препятствия
             for (int i=0; i< Field.col;i++) {
-                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
+                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) || (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) ){
                     T = false; //стопим змею
                     JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
                     s.len=2;// start length
@@ -119,27 +118,19 @@ public class Field extends JPanel implements ActionListener {
                     for (int j=0; j< Field.col;j++) {
                         objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
                         objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                        if(((Field.objx[j]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
+                                ((Field.objx[j]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
+                                ((Field.objx[j]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)))
+                        {
+                            Field.objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                            Field.objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                        }
 
                     }
                 }
 
             }
-            // если змея в змее
-            if( (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]))
-            {
-                T = false; //стопим змею
-                JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
-                s.len=2;// start length
-                a.setRandomPosition();//new candy
-                s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
-                score=0;//start score
-                s.direction=1;
-                for (int i=0; i< Field.col;i++) {
-                    objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                    objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
-                }
-            }
         }
 
         repaint();
