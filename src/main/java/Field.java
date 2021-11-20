@@ -12,9 +12,9 @@ public class Field extends JPanel implements ActionListener {
     public static final int SCALE =32;                 //размер клетки
     public static int col;
     public static int razmer;
-    public int speed=6;
+    public static int speed=6;
     public boolean T=false;
-    public int score=0;
+    public static int score=0;
     public static int[] objx;
     public static int[] objy;
     //задаем Змея и яблоко
@@ -38,15 +38,7 @@ public class Field extends JPanel implements ActionListener {
         //черный экран
         g.setColor(Color.black);
         g.fillRect(0,0, razmer+16, razmer+38);
-         //клетки
-        for (int x= 1; x<1000; x+=SCALE){
-            g.setColor(Color.black);
-            g.drawLine(x,0,x,1000);
-        }
-        for (int y=0; y<1000; y+=SCALE){
-            g.setColor(Color.black);
-            g.drawLine(0,y,1000,y);
-        }
+
 
         //яблоко,конфета...хз как ее там
         g.setColor(Color.red);
@@ -79,7 +71,29 @@ public class Field extends JPanel implements ActionListener {
         Menu app = new Menu();
         app.setVisible(true);
     }
+    public void game_over(){
+        T = false; //стопим змею
+        JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
+        s.len=2;// start length
+        a.setRandomPosition();//new candy
+        s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
+        score=0;//start score
+        s.direction=1;
+        for (int j=0; j< Field.col;j++) {
+            objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+            objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+            if(((Field.objx[j]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
+                    ((Field.objx[j]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
+                    ((Field.objx[j]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)))
+            {
+                Field.objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                Field.objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+            }
 
+        }
+
+
+    }
     @Override
     public void actionPerformed(ActionEvent e){
 
@@ -107,28 +121,13 @@ public class Field extends JPanel implements ActionListener {
 
             //змей и препятствия
             for (int i=0; i< Field.col;i++) {
-                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) || (s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) ){
-                    T = false; //стопим змею
-                    JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
-                    s.len=2;// start length
-                    a.setRandomPosition();//new candy
-                    s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
-                    score=0;//start score
-                    s.direction=1;
-                    for (int j=0; j< Field.col;j++) {
-                        objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                        objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                        if(((Field.objx[j]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
-                                ((Field.objx[j]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
-                                ((Field.objx[j]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)))
-                        {
-                            Field.objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                            Field.objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                        }
-
-                    }
+                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
+                    game_over();
                 }
 
+            }
+            if(s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) {
+                game_over();
             }
 
         }
