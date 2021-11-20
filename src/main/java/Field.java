@@ -86,10 +86,10 @@ public class Field extends JPanel implements ActionListener {
         // если нажат enter начинаем движ змейки
         if (T) s.move();
         //едим яблоко
-        if(s.sX[0]==a.posX && s.sY[0]==a.posY){
+        if(s.sX[0]==a.posX && s.sY[0]==a.posY) {
             a.setRandomPosition();
             s.len++;
-            score += 5;
+            score = score + 25 - razmer / SCALE + col;
         }
 
         //проверка спауна яблока
