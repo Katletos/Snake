@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="уже не помню что добавил">
-      <change afterPath="$PROJECT_DIR$/src/test/java/MenuTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SnakeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FieldTest.java" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="парочка тестов змея">
+      <change beforePath="$PROJECT_DIR$/src/test/java/SnakeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SnakeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637431088342</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="парочка тестов змея">
+      <created>1637511595635</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1637511595636</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +362,8 @@
     <MESSAGE value="начал тесты, кидаю что есть" />
     <MESSAGE value="исправил косяк с поеданием себя + добавка по тестам" />
     <MESSAGE value="уже не помню что добавил" />
-    <option name="LAST_COMMIT_MESSAGE" value="уже не помню что добавил" />
+    <MESSAGE value="парочка тестов змея" />
+    <option name="LAST_COMMIT_MESSAGE" value="парочка тестов змея" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
