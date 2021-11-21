@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="исправил косяк с поеданием себя + добавка по тестам">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="уже не помню что добавил">
+      <change afterPath="$PROJECT_DIR$/src/test/java/MenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SnakeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,67 +71,70 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FieldTest">
-    <configuration name="Field" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Field" />
-      <module name="Snake" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SnakeTest">
+    <configuration name="SnakeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.objects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SnakeTest.moving (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FieldTest" />
-      <option name="METHOD_NAME" value="objects" />
+      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
+      <option name="METHOD_NAME" value="moving" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.objects_generation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SnakeTest.moving" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FieldTest" />
-      <option name="METHOD_NAME" value="objects_generation" />
+      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
+      <option name="METHOD_NAME" value="moving(int)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FieldTest.snake_eat_snake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SnakeTest.turning" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FieldTest" />
-      <option name="METHOD_NAME" value="snake_eat_snake" />
+      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
+      <option name="METHOD_NAME" value="turning" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SnakeTest.up" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
+      <option name="METHOD_NAME" value="up" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FieldTest" />
-      <item itemvalue="Application.Field" />
-      <item itemvalue="JUnit.FieldTest.snake_eat_snake" />
-      <item itemvalue="JUnit.FieldTest.objects" />
-      <item itemvalue="JUnit.FieldTest.objects_generation" />
+      <item itemvalue="JUnit.SnakeTest.up" />
+      <item itemvalue="JUnit.SnakeTest.moving" />
+      <item itemvalue="JUnit.SnakeTest.moving (1)" />
+      <item itemvalue="JUnit.SnakeTest" />
+      <item itemvalue="JUnit.SnakeTest.turning" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FieldTest" />
-        <item itemvalue="JUnit.FieldTest.objects_generation" />
-        <item itemvalue="JUnit.FieldTest.objects" />
-        <item itemvalue="JUnit.FieldTest.snake_eat_snake" />
-        <item itemvalue="Application.Field" />
+        <item itemvalue="JUnit.SnakeTest" />
+        <item itemvalue="JUnit.SnakeTest.turning" />
+        <item itemvalue="JUnit.SnakeTest.moving" />
+        <item itemvalue="JUnit.SnakeTest.moving (1)" />
+        <item itemvalue="JUnit.SnakeTest.up" />
       </list>
     </recent_temporary>
   </component>
@@ -295,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637423786716</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="уже не помню что добавил">
+      <created>1637431088342</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1637431088342</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -345,7 +358,8 @@
     <MESSAGE value="респ препятсвий фиксанул" />
     <MESSAGE value="начал тесты, кидаю что есть" />
     <MESSAGE value="исправил косяк с поеданием себя + добавка по тестам" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправил косяк с поеданием себя + добавка по тестам" />
+    <MESSAGE value="уже не помню что добавил" />
+    <option name="LAST_COMMIT_MESSAGE" value="уже не помню что добавил" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

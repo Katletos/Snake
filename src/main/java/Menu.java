@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class Menu extends JFrame{
-    private final JRadioButton radio1 = new JRadioButton("Большое");
+    public  final JRadioButton radio1 = new JRadioButton("Большое");
     private final JRadioButton radio2 = new JRadioButton("Среднее");
     private final JRadioButton radio3 = new JRadioButton("Маленькое");
     private final JRadioButton radio1_obj = new JRadioButton("Нет");
