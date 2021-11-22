@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="парочка тестов змея">
-      <change beforePath="$PROJECT_DIR$/src/test/java/SnakeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SnakeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,22 +67,28 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SnakeTest">
-    <configuration name="SnakeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Field">
+    <configuration name="Field" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Field" />
+      <module name="Snake" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
+      <option name="MAIN_CLASS_NAME" value="FieldTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SnakeTest.moving (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SnakeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SnakeTest" />
-      <option name="METHOD_NAME" value="moving" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,30 +113,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SnakeTest.up" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Snake" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SnakeTest" />
-      <option name="METHOD_NAME" value="up" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.SnakeTest.up" />
+      <item itemvalue="Application.Field" />
       <item itemvalue="JUnit.SnakeTest.moving" />
-      <item itemvalue="JUnit.SnakeTest.moving (1)" />
       <item itemvalue="JUnit.SnakeTest" />
       <item itemvalue="JUnit.SnakeTest.turning" />
+      <item itemvalue="JUnit.FieldTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Field" />
         <item itemvalue="JUnit.SnakeTest" />
+        <item itemvalue="JUnit.FieldTest" />
         <item itemvalue="JUnit.SnakeTest.turning" />
         <item itemvalue="JUnit.SnakeTest.moving" />
-        <item itemvalue="JUnit.SnakeTest.moving (1)" />
-        <item itemvalue="JUnit.SnakeTest.up" />
       </list>
     </recent_temporary>
   </component>
@@ -311,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637511595636</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="парочка тестов змея">
+      <created>1637511668279</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1637511668279</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
