@@ -77,8 +77,17 @@ public class Field extends JPanel implements ActionListener {
 
 
         }
+        if (!score_and_game_over && !T ) {
+
+            g.setColor(Color.white);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 2*razmer/SCALE));
+            g.drawString("PAUSE",razmer/2-(3*razmer/SCALE),razmer/3);
+
+
+        }
 
     }
+
 
 
     public static void main(String[] args)
@@ -88,15 +97,16 @@ public class Field extends JPanel implements ActionListener {
     }
     public void game_over() {
         T = false; //стопим змею
-        score_and_game_over=true;
-        //JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
+       // score_and_game_over=true;
+        JOptionPane.showMessageDialog(null, "GAME OVER (T_T)//","GAME OVER", JOptionPane.INFORMATION_MESSAGE);
             s.len = 2;// start length
             a.setRandomPosition();//new candy
             s.sX[0] = (razmer / SCALE) / 2;
             s.sY[0] = (razmer / SCALE) / 2 - 1;
             s.sY[1] = (razmer / SCALE) / 2 - 1;
             s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
-            score = 0;//start score
+            score=0;
+
             s.direction = 1;
             for (int j = 0; j < Field.col; j++) {
                 objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
@@ -163,7 +173,7 @@ public class Field extends JPanel implements ActionListener {
     public class KeyBoard extends KeyAdapter {
         public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
-            if (key == KeyEvent.VK_ENTER ) T=true;  //начало игры
+            if (key == KeyEvent.VK_ENTER ) {T=true;} //начало игры
             if (key == KeyEvent.VK_ESCAPE) T=false;//пауза
             if (T){
                 if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_W) && s.direction != 2) s.direction = 0;//UP
