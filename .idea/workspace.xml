@@ -9,17 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="закидываю бетку">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Snake_jar2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="jar file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FieldTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Snake.jar">
+  <component name="RunManager" selected="Application.Field">
     <configuration name="Field" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Field" />
       <module name="Snake" />
@@ -124,17 +117,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.Field" />
+      <item itemvalue="JAR Application.Snake.jar" />
       <item itemvalue="JUnit.SnakeTest" />
       <item itemvalue="JUnit.SnakeTest.turning" />
       <item itemvalue="JUnit.FieldTest" />
-      <item itemvalue="JAR Application.Snake.jar" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.Snake.jar" />
         <item itemvalue="Application.Field" />
-        <item itemvalue="JUnit.SnakeTest" />
+        <item itemvalue="JAR Application.Snake.jar" />
         <item itemvalue="JUnit.FieldTest" />
+        <item itemvalue="JUnit.SnakeTest" />
         <item itemvalue="JUnit.SnakeTest.turning" />
       </list>
     </recent_temporary>
@@ -330,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637593321800</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="jar file">
+      <created>1637594654721</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1637594654721</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,7 +383,8 @@
     <MESSAGE value="уже не помню что добавил" />
     <MESSAGE value="парочка тестов змея" />
     <MESSAGE value="закидываю бетку" />
-    <option name="LAST_COMMIT_MESSAGE" value="закидываю бетку" />
+    <MESSAGE value="jar file" />
+    <option name="LAST_COMMIT_MESSAGE" value="jar file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

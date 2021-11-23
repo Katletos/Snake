@@ -83,6 +83,9 @@ class FieldTest {
            Assertions.assertFalse(((Field.objx[i]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)));
            Assertions.assertFalse(((Field.objx[i]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)));
        }
+
+
    }
+
 
 }

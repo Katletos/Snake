@@ -14,9 +14,13 @@ public class Field extends JPanel implements ActionListener {
     public static int razmer;
     public static int speed=6;
     public boolean T=false;
+
+    public  boolean score_and_game_over = false;
     public static int score=0;
     public static int[] objx;
     public static int[] objy;
+    public static String game_over = "GAME OVER (T-T)//";
+
     //задаем Змея и яблоко
     Snake s = new Snake ((razmer/SCALE)/2,(razmer/SCALE)/2-1, (razmer/SCALE)/2-1, (razmer/SCALE)/2-1);
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)),Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)));
@@ -61,39 +65,58 @@ public class Field extends JPanel implements ActionListener {
 
         g.setColor(Color.white);
         g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
-        g.drawString("SCORE:",0,razmer);
-        g.drawString(Integer.toString(score), razmer/SCALE * 5 + 10, razmer);
+        g.drawString("SCORE:"+ score,0,razmer);
+
+        if (score_and_game_over && !T ) {
+            g.setColor(Color.RED);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, razmer / 12));
+            g.drawString(game_over, razmer / 8, razmer / 2);
+            g.setColor(Color.white);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
+            g.drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
+
+
+        }
 
     }
+
 
     public static void main(String[] args)
     {
         Menu app = new Menu();
         app.setVisible(true);
     }
-    public void game_over(){
+    public void game_over() {
         T = false; //стопим змею
-        JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
-        s.len=2;// start length
-        a.setRandomPosition();//new candy
-        s.sX[0] = (razmer/SCALE)/2; s.sY[0]=(razmer/SCALE)/2-1; s.sY[1]=(razmer/SCALE)/2-1; s.sX[1]=(razmer/SCALE)/2-1;//start position
-        score=0;//start score
-        s.direction=1;
-        for (int j=0; j< Field.col;j++) {
-            objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-            objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-            if(((Field.objx[j]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
-                    ((Field.objx[j]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)) ||
-                    ((Field.objx[j]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[j]== (Field.razmer/Field.SCALE)/2 - 1)))
-            {
-                Field.objx[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                Field.objy[j] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-            }
+        score_and_game_over=true;
+        //JOptionPane.showMessageDialog(null, score,"GAME OVER", JOptionPane.INFORMATION_MESSAGE);
+            s.len = 2;// start length
+            a.setRandomPosition();//new candy
+            s.sX[0] = (razmer / SCALE) / 2;
+            s.sY[0] = (razmer / SCALE) / 2 - 1;
+            s.sY[1] = (razmer / SCALE) / 2 - 1;
+            s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
+            score = 0;//start score
+            s.direction = 1;
+            for (int j = 0; j < Field.col; j++) {
+                objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+                objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+                if (((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 + 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
+                        ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
+                        ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 - 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1))) {
+                    Field.objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+                    Field.objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+                }
 
+            }
         }
 
 
-    }
+
+
+
+
+
     @Override
     public void actionPerformed(ActionEvent e){
 
@@ -133,13 +156,14 @@ public class Field extends JPanel implements ActionListener {
         }
 
         repaint();
+
+
     }
 
     public class KeyBoard extends KeyAdapter {
         public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
-
-            if (key == KeyEvent.VK_ENTER ) T=true;//начало игры
+            if (key == KeyEvent.VK_ENTER ) T=true;  //начало игры
             if (key == KeyEvent.VK_ESCAPE) T=false;//пауза
             if (T){
                 if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_W) && s.direction != 2) s.direction = 0;//UP
