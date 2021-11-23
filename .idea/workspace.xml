@@ -9,8 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="пытаюсь крч вывести гейм овер и счет на экран">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="забил болт и сделал всплывающее + теперь на паузе пишется pause/(O_o)\">
       <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -336,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637689218399</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="забил болт и сделал всплывающее + теперь на паузе пишется pause/(O_o)\">
+      <created>1637691873148</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1637691873148</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,7 +371,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test" />
     <MESSAGE value="correct the text" />
     <MESSAGE value="Переделал поле" />
     <MESSAGE value="сделал читабельнее" />
@@ -390,7 +395,8 @@
     <MESSAGE value="закидываю бетку" />
     <MESSAGE value="jar file" />
     <MESSAGE value="пытаюсь крч вывести гейм овер и счет на экран" />
-    <option name="LAST_COMMIT_MESSAGE" value="пытаюсь крч вывести гейм овер и счет на экран" />
+    <MESSAGE value="забил болт и сделал всплывающее + теперь на паузе пишется pause/(O_o)\" />
+    <option name="LAST_COMMIT_MESSAGE" value="забил болт и сделал всплывающее + теперь на паузе пишется pause/(O_o)\" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

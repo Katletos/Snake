@@ -81,7 +81,10 @@ public class Field extends JPanel implements ActionListener {
 
             g.setColor(Color.white);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 2*razmer/SCALE));
+            if(razmer/SCALE!=15)
             g.drawString("PAUSE",razmer/2-(3*razmer/SCALE),razmer/3);
+            else
+                g.drawString("PAUSE",razmer/2-(3*razmer/SCALE)-16,razmer/3);
 
 
         }
