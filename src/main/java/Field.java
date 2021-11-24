@@ -40,9 +40,8 @@ public class Field extends JPanel implements ActionListener {
     public void paint(Graphics g){
 
         //черный экран
-        g.setColor(Color.black);
+        g.setColor(Color.cyan);
         g.fillRect(0,0, razmer+16, razmer+38);
-
 
         //яблоко,конфета...хз как ее там
         g.setColor(Color.red);
@@ -53,7 +52,6 @@ public class Field extends JPanel implements ActionListener {
         for (int i=0; i< col;i++) {
             g.fillRect(objx[i]*SCALE+4,objy[i]*SCALE+3,SCALE-6,SCALE-6);
         }
-
 
         //змей
         for (int l=1; l<s.len; l++){
@@ -67,16 +65,6 @@ public class Field extends JPanel implements ActionListener {
         g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
         g.drawString("SCORE:"+ score,0,razmer);
 
-        if (score_and_game_over && !T ) {
-            g.setColor(Color.RED);
-            g.setFont(new Font("TimesRoman", Font.PLAIN, razmer / 12));
-            g.drawString(game_over, razmer / 8, razmer / 2);
-            g.setColor(Color.white);
-            g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
-            g.drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
-
-
-        }
         if (!score_and_game_over && !T ) {
 
             g.setColor(Color.white);
@@ -85,13 +73,8 @@ public class Field extends JPanel implements ActionListener {
             g.drawString("PAUSE",razmer/2-(3*razmer/SCALE),razmer/3);
             else
                 g.drawString("PAUSE",razmer/2-(3*razmer/SCALE)-16,razmer/3);
-
-
         }
-
     }
-
-
 
     public static void main(String[] args)
     {
@@ -100,15 +83,22 @@ public class Field extends JPanel implements ActionListener {
     }
     public void game_over() {
         T = false; //стопим змею
-       // score_and_game_over=true;
-        JOptionPane.showMessageDialog(null, "GAME OVER (T_T)//","GAME OVER", JOptionPane.INFORMATION_MESSAGE);
-            s.len = 2;// start length
-            a.setRandomPosition();//new candy
-            s.sX[0] = (razmer / SCALE) / 2;
-            s.sY[0] = (razmer / SCALE) / 2 - 1;
-            s.sY[1] = (razmer / SCALE) / 2 - 1;
-            s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
-            score=0;
+
+        getGraphics().setFont(new Font("TimesRoman", Font.PLAIN, 14));
+        getGraphics().setColor(Color.RED);
+        getGraphics().drawString(game_over, razmer / 8, razmer / 2);
+        getGraphics().setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
+        getGraphics().setColor(Color.white);
+        getGraphics().drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
+        JOptionPane.showConfirmDialog(null, "You want to continue", "Menu", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+        s.len = 2;// start length
+        a.setRandomPosition();//new candy
+        s.sX[0] = (razmer / SCALE) / 2;
+        s.sY[0] = (razmer / SCALE) / 2 - 1;
+        s.sY[1] = (razmer / SCALE) / 2 - 1;
+        s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
+        score=0;
 
             s.direction = 1;
             for (int j = 0; j < Field.col; j++) {
@@ -123,12 +113,6 @@ public class Field extends JPanel implements ActionListener {
 
             }
         }
-
-
-
-
-
-
 
     @Override
     public void actionPerformed(ActionEvent e){
@@ -165,12 +149,8 @@ public class Field extends JPanel implements ActionListener {
             if(s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) {
                 game_over();
             }
-
         }
-
         repaint();
-
-
     }
 
     public class KeyBoard extends KeyAdapter {
