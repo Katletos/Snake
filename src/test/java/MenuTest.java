@@ -10,6 +10,6 @@ class MenuTest {
     public void big_field(){
 
 
-    }
+}
 
 }
