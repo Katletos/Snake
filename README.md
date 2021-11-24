@@ -1,2 +1,0 @@
-# Snake
-Educational project
