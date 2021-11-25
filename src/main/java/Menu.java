@@ -90,7 +90,6 @@ public class Menu extends JFrame{
                     Field.objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
                     Field.objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
                 }
-
             }
 
             //настройка окна вывод
@@ -102,8 +101,5 @@ public class Menu extends JFrame{
             Field.jFrame.add(new Field());
             Field.jFrame.setVisible(true);
         }
-
-
     }
-
 }

@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="подправил q(вывод на q оставил)">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="Кнопка cansel генерирует новое поле по старым настройкам">
       <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snake.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

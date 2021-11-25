@@ -14,7 +14,6 @@ public class Field extends JPanel implements ActionListener {
     public static int razmer;
     public static int speed=6;
     public boolean T=false;
-
     public  boolean score_and_game_over = false;
     public static int score=0;
     public static int[] objx;
@@ -32,7 +31,6 @@ public class Field extends JPanel implements ActionListener {
     timer.start();
     addKeyListener(new KeyBoard());
     setFocusable(true);
-
     }
 
     //отрисовка клеток на поле
@@ -66,7 +64,6 @@ public class Field extends JPanel implements ActionListener {
         g.drawString("SCORE:"+ score,0,razmer);
 
         if (!score_and_game_over && !T ) {
-
             g.setColor(Color.white);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 2*razmer/SCALE));
             if(razmer/SCALE!=15)
@@ -74,8 +71,6 @@ public class Field extends JPanel implements ActionListener {
             else
                 g.drawString("PAUSE",razmer/2-(3*razmer/SCALE)-16,razmer/3);
         }
-
-
     }
 
     public static void main(String[] args)
@@ -86,12 +81,9 @@ public class Field extends JPanel implements ActionListener {
     public void game_over() {
         T = false; //стопим змею
         Graphics g = this.getGraphics();
-
-
         g.setColor(Color.RED);
         g.setFont(new Font("TimesRoman", Font.PLAIN, 3*razmer/SCALE));
         g.drawString(game_over, razmer / 8, razmer / 2);
-
         g.setColor(Color.white);
         g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
         g.drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
@@ -105,7 +97,6 @@ public class Field extends JPanel implements ActionListener {
             app.setVisible(true);
         }
 
-
         s.len = 2;// start length
         a.setRandomPosition();//new candy
         s.sX[0] = (razmer / SCALE) / 2;
@@ -113,26 +104,22 @@ public class Field extends JPanel implements ActionListener {
         s.sY[1] = (razmer / SCALE) / 2 - 1;
         s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
         score=0;
+        s.direction = 1;
 
-            s.direction = 1;
-            for (int j = 0; j < Field.col; j++) {
-                objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                if (((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 + 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
-                        ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
-                        ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 - 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1))) {
-                    Field.objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                    Field.objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                }
-
+        for (int j = 0; j < Field.col; j++) {
+            objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+            objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+            if (((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 + 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
+                    ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
+                    ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 - 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1))) {
+                Field.objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+                Field.objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
             }
         }
+    }
 
     @Override
     public void actionPerformed(ActionEvent e){
-
-
-
         // если нажат enter начинаем движ змейки
         if (T) s.move();
         //едим яблоко
@@ -141,7 +128,6 @@ public class Field extends JPanel implements ActionListener {
             s.len++;
             score = score + 25 - razmer / SCALE + col+speed/2;
             if (col==0 && s.len % 5 ==0 && speed<20) speed+=2;
-
         }
 
         //проверка спауна яблока
