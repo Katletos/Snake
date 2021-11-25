@@ -172,9 +172,11 @@ public class Field extends JPanel implements ActionListener {
     public class KeyBoard extends KeyAdapter {
         public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
-            if (key == KeyEvent.VK_Q )
+            if (key == KeyEvent.VK_Q)
             {
                 jFrame.dispose();
+                score=0;
+                speed=6;
                 Menu app = new Menu();
                 app.setVisible(true);
             }

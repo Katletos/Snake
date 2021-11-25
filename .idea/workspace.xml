@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="закидываю бетку">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="добил вывод надписей">
       <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/FieldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FieldTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MenuTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637822946256</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="добил вывод надписей">
+      <created>1637853647824</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1637853647824</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,7 +395,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="сделал читабельнее" />
     <MESSAGE value="родил головастика" />
     <MESSAGE value="головастик шевелится" />
     <MESSAGE value="он на поводке(можно управлять)" />
@@ -418,7 +419,8 @@
     <MESSAGE value="забил болт и сделал всплывающее + теперь на паузе пишется pause/(O_o)\" />
     <MESSAGE value="екст выоводится на поле, но не правильным цветом. Надо настороить кнопки" />
     <MESSAGE value="Появляется диологовое окно, в котором можно выбрать начать заново или закрыть програму" />
-    <option name="LAST_COMMIT_MESSAGE" value="Появляется диологовое окно, в котором можно выбрать начать заново или закрыть програму" />
+    <MESSAGE value="добил вывод надписей" />
+    <option name="LAST_COMMIT_MESSAGE" value="добил вывод надписей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
