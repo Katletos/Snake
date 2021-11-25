@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="добил вывод надписей">
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="подправил q(вывод на q оставил)">
       <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637853647824</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="подправил q(вывод на q оставил)">
+      <created>1637853983642</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1637853983642</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -395,7 +404,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="родил головастика" />
     <MESSAGE value="головастик шевелится" />
     <MESSAGE value="он на поводке(можно управлять)" />
     <MESSAGE value="старт движения по нажатию enter" />
@@ -420,7 +428,8 @@
     <MESSAGE value="екст выоводится на поле, но не правильным цветом. Надо настороить кнопки" />
     <MESSAGE value="Появляется диологовое окно, в котором можно выбрать начать заново или закрыть програму" />
     <MESSAGE value="добил вывод надписей" />
-    <option name="LAST_COMMIT_MESSAGE" value="добил вывод надписей" />
+    <MESSAGE value="подправил q(вывод на q оставил)" />
+    <option name="LAST_COMMIT_MESSAGE" value="подправил q(вывод на q оставил)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

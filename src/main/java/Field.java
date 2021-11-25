@@ -139,7 +139,9 @@ public class Field extends JPanel implements ActionListener {
         if(s.sX[0]==a.posX && s.sY[0]==a.posY) {
             a.setRandomPosition();
             s.len++;
-            score = score + 25 - razmer / SCALE + col;
+            score = score + 25 - razmer / SCALE + col+speed/2;
+            if (col==0 && s.len % 5 ==0 && speed<20) speed+=2;
+
         }
 
         //проверка спауна яблока
