@@ -90,7 +90,7 @@ public class Field extends JPanel implements ActionListener {
         getGraphics().setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
         getGraphics().setColor(Color.white);
         getGraphics().drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
-        int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if (n==1)
             System.exit(0);
