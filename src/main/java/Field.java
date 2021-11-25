@@ -40,7 +40,7 @@ public class Field extends JPanel implements ActionListener {
     public void paint(Graphics g){
 
         //черный экран
-        g.setColor(Color.cyan);
+        g.setColor(Color.black);
         g.fillRect(0,0, razmer+16, razmer+38);
 
         //яблоко,конфета...хз как ее там
@@ -74,6 +74,8 @@ public class Field extends JPanel implements ActionListener {
             else
                 g.drawString("PAUSE",razmer/2-(3*razmer/SCALE)-16,razmer/3);
         }
+
+
     }
 
     public static void main(String[] args)
@@ -83,15 +85,18 @@ public class Field extends JPanel implements ActionListener {
     }
     public void game_over() {
         T = false; //стопим змею
+        Graphics g = this.getGraphics();
 
-        getGraphics().setFont(new Font("TimesRoman", Font.PLAIN, 14));
-        getGraphics().setColor(Color.RED);
-        getGraphics().drawString(game_over, razmer / 8, razmer / 2);
-        getGraphics().setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
-        getGraphics().setColor(Color.white);
-        getGraphics().drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
+
+        g.setColor(Color.RED);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 3*razmer/SCALE));
+        g.drawString(game_over, razmer / 8, razmer / 2);
+
+        g.setColor(Color.white);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
+        g.drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
+
         int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
-
         if (n==1)
             System.exit(0);
         if (n==0){
@@ -99,6 +104,7 @@ public class Field extends JPanel implements ActionListener {
             Menu app = new Menu();
             app.setVisible(true);
         }
+
 
         s.len = 2;// start length
         a.setRandomPosition();//new candy
@@ -124,6 +130,8 @@ public class Field extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
+
+
 
         // если нажат enter начинаем движ змейки
         if (T) s.move();
@@ -164,6 +172,12 @@ public class Field extends JPanel implements ActionListener {
     public class KeyBoard extends KeyAdapter {
         public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
+            if (key == KeyEvent.VK_Q )
+            {
+                jFrame.dispose();
+                Menu app = new Menu();
+                app.setVisible(true);
+            }
             if (key == KeyEvent.VK_ENTER ) {T=true;} //начало игры
             if (key == KeyEvent.VK_ESCAPE) T=false;//пауза
             if (T){
