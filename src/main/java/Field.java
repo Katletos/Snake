@@ -90,8 +90,16 @@ public class Field extends JPanel implements ActionListener {
         getGraphics().setFont(new Font("TimesRoman", Font.PLAIN, razmer/SCALE+5));
         getGraphics().setColor(Color.white);
         getGraphics().drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
-        JOptionPane.showConfirmDialog(null, "You want to continue", "Menu", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
-        System.exit(0);
+        int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (n==1)
+            System.exit(0);
+        if (n==0){
+            jFrame.dispose();
+            Menu app = new Menu();
+            app.setVisible(true);
+        }
+
         s.len = 2;// start length
         a.setRandomPosition();//new candy
         s.sX[0] = (razmer / SCALE) / 2;
