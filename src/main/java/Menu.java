@@ -10,7 +10,7 @@ public class Menu extends JFrame{
     private final JRadioButton radio3_obj = new JRadioButton("Средне");
     private final JRadioButton radio4_obj = new JRadioButton("Много");
 
-
+    //создание меню настроек змеи
     public Menu(){
         super("Options");
         this.setSize(Field.SCALE*20, Field.SCALE*20);
@@ -52,6 +52,7 @@ public class Menu extends JFrame{
         container.add(button);
     }
 
+    //задание переменных по данным настройкам
     class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
             dispose();
@@ -79,10 +80,13 @@ public class Menu extends JFrame{
 
             Field.objx= new int[Field.col];
             Field.objy= new int[Field.col];
+
+            //генерация координат препятствий
             for (int i=0; i< Field.col;i++) {
                 Field.objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
                 Field.objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
 
+                //проверка на спаун перед головой змеи
                 if(((Field.objx[i]== (Field.razmer/Field.SCALE)/2 + 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)) ||
                         ((Field.objx[i]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)) ||
                         ((Field.objx[i]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)))
