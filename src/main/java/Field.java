@@ -136,6 +136,7 @@ public class Field extends JPanel implements ActionListener {
 
         //создание поля по новым настройкам
         if (n==0){
+            score=0;
             jFrame.dispose();
             Menu app = new Menu();
             app.setVisible(true);
