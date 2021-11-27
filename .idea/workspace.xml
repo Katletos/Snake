@@ -9,13 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="Кнопка cansel генерирует новое поле по старым настройкам">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2021_17_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2021_17_47__Changes_.xml" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="javadoc">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Apple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Apple.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Menu$ButtonEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Menu$ButtonEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FieldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FieldTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MenuTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637853983642</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="написал коментарии ко всему коду">
+      <created>1637945908742</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1637945908742</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -407,8 +422,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="головастик шевелится" />
-    <MESSAGE value="он на поводке(можно управлять)" />
     <MESSAGE value="старт движения по нажатию enter" />
     <MESSAGE value="еда на поле" />
     <MESSAGE value="червяк растет" />
@@ -432,7 +445,9 @@
     <MESSAGE value="Появляется диологовое окно, в котором можно выбрать начать заново или закрыть програму" />
     <MESSAGE value="добил вывод надписей" />
     <MESSAGE value="подправил q(вывод на q оставил)" />
-    <option name="LAST_COMMIT_MESSAGE" value="подправил q(вывод на q оставил)" />
+    <MESSAGE value="написал коментарии ко всему коду" />
+    <MESSAGE value="javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

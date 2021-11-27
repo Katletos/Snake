@@ -5,30 +5,48 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ *  main class
+ */
 public class Field extends JPanel implements ActionListener {
-
-
+    /** Frame */
     public static JFrame jFrame;                 //создание окна вывода
+    /** size of scale */
     public static final int SCALE =32;           //размер клетки
+    /** number of object */
     public static int col;                       //количество препятствий
+    /** size of field */
     public static int razmer;                    //размер поля
+    /** speed of snake */
     public static int speed=6;                   //скорость игры
+    /** parameter of game */
     public boolean T=false;                      //игра на паузе или нет
+    /** parameter of game over */
     public  boolean score_and_game_over = false;
+    /** score of game */
     public static int score=0;                   //счет за игру
+    /** coordinate X of object */
     public static int[] objx;                    //кординаты препятствий по х
+    /** coordinate Y of object */
     public static int[] objy;                    //координаты пряпятствий по у
+    /** title */
     public static String game_over = "GAME OVER (T-T)//";
 
+    /** create snake on field */
     //задаем Змея
     Snake s = new Snake ((razmer/SCALE)/2,(razmer/SCALE)/2-1, (razmer/SCALE)/2-1, (razmer/SCALE)/2-1);
 
+    /** create apple on field */
     //задаем яблоко
     Apple a = new Apple  (Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)),Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)));
 
+    /** create timer of work */
     //Ввод таймера для движ змеи
     Timer timer = new Timer(1000/speed, this);
 
+    /**
+     * add keyboard and timer
+     */
     //подрубаем клаву и таймер
     public Field(){
     timer.start();
@@ -36,6 +54,10 @@ public class Field extends JPanel implements ActionListener {
     setFocusable(true);
     }
 
+    /**
+     * field rendering
+     * @param g graphics variable
+     */
     //отрисовка поля
     @Override
     public void paint(Graphics g){
@@ -78,6 +100,10 @@ public class Field extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * main procedure
+     * @param args main parameter
+     */
     //начало работы програмы
     public static void main(String[] args)
     {
@@ -85,6 +111,9 @@ public class Field extends JPanel implements ActionListener {
         app.setVisible(true);
     }
 
+    /**
+     * procedure run when game over
+     */
     //Если игра закончилась
     public void game_over() {
         T = false; //стопим змею
@@ -128,7 +157,7 @@ public class Field extends JPanel implements ActionListener {
                 objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
                 objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
 
-                //если препятствие перед головой змеи
+
                 if (((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 + 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
                         ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
                         ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 - 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1))) {
@@ -139,6 +168,10 @@ public class Field extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * procedure of all event on field
+     * @param e parameter of event
+     */
     //основной алгоритм игры
     @Override
     public void actionPerformed(ActionEvent e){
@@ -183,6 +216,9 @@ public class Field extends JPanel implements ActionListener {
         repaint();
     }
 
+    /**
+     * procedure that change direction of snake
+     */
     //подключение клавиш
     public class KeyBoard extends KeyAdapter {
         public void keyPressed(KeyEvent event) {

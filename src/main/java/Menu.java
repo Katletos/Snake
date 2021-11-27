@@ -1,15 +1,26 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+/** class of menu */
 public class Menu extends JFrame{
+    /** title of button */
     public  final JRadioButton radio1 = new JRadioButton("Большое");
+    /** title of button */
     private final JRadioButton radio2 = new JRadioButton("Среднее");
+    /** title of button */
     private final JRadioButton radio3 = new JRadioButton("Маленькое");
+    /** title of button */
     private final JRadioButton radio1_obj = new JRadioButton("Нет");
+    /** title of button */
     private final JRadioButton radio2_obj = new JRadioButton("Мало");
+    /** title of button */
     private final JRadioButton radio3_obj = new JRadioButton("Средне");
+    /** title of button */
     private final JRadioButton radio4_obj = new JRadioButton("Много");
 
+    /**
+     * create of menu
+     */
     //создание меню настроек змеи
     public Menu(){
         super("Options");
@@ -52,6 +63,9 @@ public class Menu extends JFrame{
         container.add(button);
     }
 
+    /**
+     * assigning variables according to the specified settings
+     */
     //задание переменных по данным настройкам
     class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
