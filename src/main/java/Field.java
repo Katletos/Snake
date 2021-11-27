@@ -128,7 +128,7 @@ public class Field extends JPanel implements ActionListener {
         g.drawString("YOUR FINAL SCORE:"+score,razmer/4,razmer/2 + game_over.length() +  razmer/SCALE - 5);
 
         //создание и вывод диалогового окна, в котором можно выбрать дальнейшие действия
-        int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         //выход с игры
         if (n==1)
@@ -139,32 +139,6 @@ public class Field extends JPanel implements ActionListener {
             jFrame.dispose();
             Menu app = new Menu();
             app.setVisible(true);
-        }
-
-        //оздание нового поля по старым настройкам
-        if (n==2) {
-            s.len = 2;// start length
-            a.setRandomPosition();//new candy
-            s.sX[0] = (razmer / SCALE) / 2;
-            s.sY[0] = (razmer / SCALE) / 2 - 1;
-            s.sY[1] = (razmer / SCALE) / 2 - 1;
-            s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
-            score = 0;
-            s.direction = 1;
-
-            //генерация препятствий
-            for (int j = 0; j < Field.col; j++) {
-                objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-
-
-                if (((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 + 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
-                        ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
-                        ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 - 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1))) {
-                    Field.objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                    Field.objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                }
-            }
         }
     }
 

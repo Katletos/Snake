@@ -10,20 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="javadoc">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Apple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2021_17_47__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_09_2021_17_47__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Apple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Apple.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Menu$ButtonEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Menu$ButtonEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/FieldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FieldTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MenuTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
