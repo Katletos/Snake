@@ -26,12 +26,25 @@ public class Snake {
         sY[1]=y2;
     }
 
+    /**
+     * moving of the snake to the wall
+     * @param sY coordinate of snake in Oy
+     * @param sX coordinate of snake in Ox
+     */
+    public static void move_in_wall(int[] sY, int[] sX){
+        //змея переползает с одной части экрана в другую
+        if(sY[0]>Field.razmer/Field.SCALE-1) sY[0]=0;
+        if(sY[0]<0) sY[0]=Field.razmer/Field.SCALE-1;
+        if(sX[0]>Field.razmer/Field.SCALE-1)  sX[0]=0;
+        if(sX[0]<0) sX[0]=Field.razmer/Field.SCALE-1;
+    }
+
 
     /**
      * move of snake
      */
     //движение змеи
-    public void move(){
+    public  void move(){
         for(int l = len; l > 0; l--){
             sX[l] = sX[l-1];
             sY[l] = sY[l-1];
@@ -44,11 +57,8 @@ public class Snake {
         if(direction == 1) sX[0]++;
         //left
         if(direction == 3) sX[0]--;
+        move_in_wall(sY, sX);
 
-        //змея переползает с одной части экрана в другую
-        if(sY[0]>Field.razmer/Field.SCALE-1) sY[0]=0;
-        if(sY[0]<0) sY[0]=Field.razmer/Field.SCALE-1;
-        if(sX[0]>Field.razmer/Field.SCALE-1)  sX[0]=0;
-        if(sX[0]<0) sX[0]=Field.razmer/Field.SCALE-1;
+
     }
 }
