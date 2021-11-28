@@ -105,9 +105,7 @@ public class Menu extends JFrame{
         }
 
     }
-    /**
-     * assigning variables according to the specified settings
-     */
+    /*** create barriers*/
     public static void create_objects(){
         Field.objx= new int[Field.col];
         Field.objy= new int[Field.col];
@@ -122,18 +120,15 @@ public class Menu extends JFrame{
                     ((Field.objx[i]== (Field.razmer/Field.SCALE)/2  ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)) ||
                     ((Field.objx[i]== (Field.razmer/Field.SCALE)/2 - 1 ) && (Field.objy[i]== (Field.razmer/Field.SCALE)/2 - 1)))
             {
-                Field.objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
-                Field.objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
+                Field.objx[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1)); Field.objy[i] = Math.abs( (int) (Math.random()*(Field.razmer/Field.SCALE)-1));
             }
         }
     }
+    /*** assigning variables according to the specified settings*/
     //задание переменных по данным настройкам
     class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            dispose();
-            radio_choose();
-           create_objects();
-            create_field();
+            dispose(); radio_choose(); create_objects(); create_field();
         }
     }
 }

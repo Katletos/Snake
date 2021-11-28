@@ -20,7 +20,7 @@ public class Field extends JPanel implements ActionListener {
     /** speed of snake */
     public static int speed=6;                   //скорость игры
     /** parameter of game */
-    public boolean T=false;                      //игра на паузе или нет
+    public static boolean T=false;                      //игра на паузе или нет
     /** parameter of game over */
     public  boolean score_and_game_over = false;
     /** score of game */
@@ -90,13 +90,9 @@ public class Field extends JPanel implements ActionListener {
         g.drawString("SCORE:"+ score,0,razmer);
 
         //Отрисовка надписи "PAUSE"
-        if (!score_and_game_over && !T ) {
-            g.setColor(Color.white);
-            g.setFont(new Font("TimesRoman", Font.PLAIN, 2*razmer/SCALE));
-            if(razmer/SCALE!=15)
-            g.drawString("PAUSE",razmer/2-(3*razmer/SCALE),razmer/3);
-            else
-                g.drawString("PAUSE",razmer/2-(3*razmer/SCALE)-16,razmer/3);
+        if (!score_and_game_over && !T ) { g.setColor(Color.white); g.setFont(new Font("TimesRoman", Font.PLAIN, 2*razmer/SCALE));
+            if(razmer/SCALE!=15)  g.drawString("PAUSE",razmer/2-(3*razmer/SCALE),razmer/3);
+            else  g.drawString("PAUSE",razmer/2-(3*razmer/SCALE)-16,razmer/3);
         }
     }
 
@@ -107,16 +103,39 @@ public class Field extends JPanel implements ActionListener {
     //начало работы програмы
     public static void main(String[] args)
     {
-        Menu app = new Menu();
-        app.setVisible(true);
+        Menu app = new Menu(); app.setVisible(true);
     }
 
-    /**
-     * procedure run when game over
-     */
-    //Если игра закончилась
-    public void game_over() {
-        T = false; //стопим змею
+    /*** eat an apple */
+    public static void eat_apple(Snake s, Apple a){
+        //едим яблоко
+        if(s.sX[0]==a.posX && s.sY[0]==a.posY) {
+            a.setRandomPosition();
+            s.len++;
+            score = score + 25 - razmer / SCALE + col+speed/2;
+            if (col==0 && s.len % 5 ==0 && speed<20) speed+=2;
+        }
+    }
+
+    /*** repaint the apple if it is situated in snake or barriers */
+    public static void object_in_object(Snake s, Apple a) {
+        for (int l = 1; l < s.len; l++) {
+            // если яблоко в змейке
+            if (s.sX[l] == a.posX && s.sY[l] == a.posY) {
+                a.setRandomPosition();
+            }
+            //если яблоко в препятствии
+            for (int i = 0; i < col; i++) {
+                if (objx[i] == a.posX && objy[i] == a.posY) {
+                    a.setRandomPosition();
+                }
+            }
+        }
+    }
+
+
+    /***  draw the text after losing */
+    public void game_over_draw(){
         Graphics g = this.getGraphics();
         g.setColor(Color.RED);
         g.setFont(new Font("TimesRoman", Font.PLAIN, 3*razmer/SCALE));
@@ -127,7 +146,11 @@ public class Field extends JPanel implements ActionListener {
         int n = JOptionPane.showConfirmDialog(null,"You want to continue", "Menu",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (n==1)
             System.exit(0);
+    }
 
+    /*** procedure run when game over*/
+    public static void game_over(Snake s, Apple a) {
+        T = false; //стопим змею
         s.len = 2;// start length
         a.setRandomPosition();//new candy
         s.sX[0] = (razmer / SCALE) / 2;
@@ -136,14 +159,25 @@ public class Field extends JPanel implements ActionListener {
         s.sX[1] = (razmer / SCALE) / 2 - 1;//start position
         score=0;
         s.direction = 1;
-        for (int j = 0; j < Field.col; j++) {
-            objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-            objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-            if (((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 + 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
-                    ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1)) ||
-                    ((Field.objx[j] == (Field.razmer / Field.SCALE) / 2 - 1) && (Field.objy[j] == (Field.razmer / Field.SCALE) / 2 - 1))) {
-                Field.objx[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
-                Field.objy[j] = Math.abs((int) (Math.random() * (Field.razmer / Field.SCALE) - 1));
+        Menu.create_objects();
+    }
+
+
+
+    /***  verification to the game_over */
+    public void the_end(){
+        object_in_object(s,a);
+        for (int l=1; l<s.len; l++){
+
+            for (int i=0; i< Field.col;i++) {
+                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
+                    game_over_draw();
+                    game_over(s,a);
+                }
+            }
+            if(s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) {
+                game_over_draw();
+                game_over(s,a);
             }
         }
     }
@@ -154,62 +188,19 @@ public class Field extends JPanel implements ActionListener {
      */
     //основной алгоритм игры
     @Override
-    public void actionPerformed(ActionEvent e){
-
-        // если нажат enter начинаем движ змейки
+    public  void actionPerformed(ActionEvent e){
         if (T) s.move();
-
-        //едим яблоко
-        if(s.sX[0]==a.posX && s.sY[0]==a.posY) {
-            a.setRandomPosition();
-            s.len++;
-            score = score + 25 - razmer / SCALE + col+speed/2;
-            if (col==0 && s.len % 5 ==0 && speed<20) speed+=2;
-        }
-
-        //проверка спауна яблока
-        for (int l=1; l<s.len; l++){
-            // если яблоко в змейке
-            if(s.sX[l]==a.posX && s.sY[l]==a.posY){
-                a.setRandomPosition();
-            }
-            //если яблоко в препятствии
-            for (int i = 0; i< col;i++){
-                if(objx[i]==a.posX && objy[i]==a.posY){
-                    a.setRandomPosition();
-                }
-            }
-
-            //змей и препятствия
-            for (int i=0; i< Field.col;i++) {
-                if( (s.sX[0]==objx[i] && s.sY[0]==objy[i]) ){
-                    game_over();
-                }
-
-            }
-
-            //змея врезалась в себя
-            if(s.sX[0]==s.sX[l] && s.sY[0]==s.sY[l]) {
-                game_over();
-            }
-        }
-        repaint();
+        eat_apple(s,a); the_end(); repaint();
     }
 
-    /**
-     * procedure that change direction of snake
-     */
+    /*** procedure that change direction of snake */
     //подключение клавиш
     public class KeyBoard extends KeyAdapter {
         public void keyPressed(KeyEvent event) {
             int key = event.getKeyCode();
             if (key == KeyEvent.VK_Q)
             {
-                jFrame.dispose();
-                score=0;
-                speed=6;
-                Menu app = new Menu();
-                app.setVisible(true);
+                jFrame.dispose(); score=0; speed=6; Menu app = new Menu(); app.setVisible(true);
             }
             if (key == KeyEvent.VK_ENTER ) {T=true;} //начало игры
             if (key == KeyEvent.VK_ESCAPE) T=false;//пауза

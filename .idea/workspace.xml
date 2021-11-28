@@ -9,20 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="cancel настроил">
-      <change afterPath="$PROJECT_DIR$/src/test/java/AppleTest.java" afterDir="false" />
+    <list default="true" id="e267c14b-1b06-4dc9-a8aa-737fca788b6b" name="Changes" comment="тестов добавил">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snake.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FieldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MenuTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SnakeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SnakeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field$KeyBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Field.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Menu$ButtonEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Menu$ButtonEvent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Snake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/FieldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FieldTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/MenuTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MenuTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/SnakeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SnakeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +84,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Field">
+  <component name="RunManager" selected="JUnit.All in Snake">
     <configuration name="Field" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Field" />
       <module name="Snake" />
@@ -96,29 +92,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Snake" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AppleTest" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FieldTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Snake" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FieldTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MenuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FieldTest.obj_in_obj" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Snake" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MenuTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuTest.obj_on_middle_field" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Snake" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MenuTest" />
-      <option name="METHOD_NAME" value="obj_on_middle_field" />
+      <option name="MAIN_CLASS_NAME" value="FieldTest" />
+      <option name="METHOD_NAME" value="obj_in_obj" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,19 +129,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MenuTest" />
-      <item itemvalue="JUnit.AppleTest" />
+      <item itemvalue="JUnit.FieldTest" />
       <item itemvalue="JUnit.SnakeTest" />
-      <item itemvalue="JUnit.MenuTest.obj_on_middle_field" />
+      <item itemvalue="JUnit.All in Snake" />
+      <item itemvalue="JUnit.FieldTest.obj_in_obj" />
       <item itemvalue="Application.Field" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Snake" />
+        <item itemvalue="JUnit.FieldTest" />
+        <item itemvalue="JUnit.FieldTest.obj_in_obj" />
         <item itemvalue="Application.Field" />
-        <item itemvalue="JUnit.MenuTest" />
-        <item itemvalue="JUnit.MenuTest.obj_on_middle_field" />
         <item itemvalue="JUnit.SnakeTest" />
-        <item itemvalue="JUnit.AppleTest" />
       </list>
     </recent_temporary>
   </component>
@@ -411,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638091634455</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="тестов добавил">
+      <created>1638099960719</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1638099960719</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,7 +442,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="червяк растет" />
     <MESSAGE value="запрет на съедение себя" />
     <MESSAGE value="нельзя врезаться в стены" />
     <MESSAGE value="стены сделаны" />
@@ -465,7 +466,8 @@
     <MESSAGE value="javadoc" />
     <MESSAGE value="убрал cansel" />
     <MESSAGE value="cancel настроил" />
-    <option name="LAST_COMMIT_MESSAGE" value="cancel настроил" />
+    <MESSAGE value="тестов добавил" />
+    <option name="LAST_COMMIT_MESSAGE" value="тестов добавил" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -480,13 +482,15 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Snake$SnakeTest_move_in_wall.ic" NAME="SnakeTest.move_in_wall Coverage Results" MODIFIED="1638095888050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$FieldTest_apple_and_objects__1_.ic" NAME="FieldTest.apple_and_objects (1) Coverage Results" MODIFIED="1638093790540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Snake$AppleTest.ic" NAME="AppleTest Coverage Results" MODIFIED="1638099253087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$AppleTest.ic" NAME="AppleTest Coverage Results" MODIFIED="1638104111207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$All_in_Snake.ic" NAME="All in Snake Coverage Results" MODIFIED="1638105360469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$SnakeTest_move_in_wall2.ic" NAME="SnakeTest.move_in_wall2 Coverage Results" MODIFIED="1638096002793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$Field.ic" NAME="Field Coverage Results" MODIFIED="1638097864927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Snake$MenuTest.ic" NAME="MenuTest Coverage Results" MODIFIED="1638099787981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$MenuTest.ic" NAME="MenuTest Coverage Results" MODIFIED="1638104147647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$SnakeTest_move.ic" NAME="SnakeTest.move Coverage Results" MODIFIED="1638096346951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Snake$FieldTest.ic" NAME="FieldTest Coverage Results" MODIFIED="1638099239402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Snake$SnakeTest.ic" NAME="SnakeTest Coverage Results" MODIFIED="1638099316462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$FieldTest_obj_in_obj.ic" NAME="FieldTest.obj_in_obj Coverage Results" MODIFIED="1638104333872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$FieldTest.ic" NAME="FieldTest Coverage Results" MODIFIED="1638105111030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Snake$SnakeTest.ic" NAME="SnakeTest Coverage Results" MODIFIED="1638104164636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Snake$MenuTest_creation.ic" NAME="MenuTest.creation Coverage Results" MODIFIED="1638096648108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
